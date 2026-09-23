@@ -19,6 +19,7 @@ import {
   FileDown
 } from 'lucide-react';
 import { SensorIcon } from './SensorIcon';
+import { MakeCodeBlockBadge, BlockPaletteGrid } from './MakeCodeBlockVisual';
 import { downloadHexFile, openInMakeCode, requestMicrobitDevice, isWebUSBSupported } from '../utils/webusb';
 import confetti from 'canvas-confetti';
 
@@ -398,39 +399,134 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 
               {/* MakeCode Visning */}
               {codeLanguage === 'makecode' && (
-                <div className="space-y-4">
+                <div className="space-y-6">
+                  {/* Påkrævede Udvidelser */}
                   {project.makeCode.extensionsNeeded.length > 0 && (
-                    <div className="p-3 rounded-lg bg-purple-950/40 border border-purple-900/60 text-xs text-purple-200 flex items-center space-x-2">
-                      <Sparkles className="w-4 h-4 text-purple-400 shrink-0" />
-                      <span>
-                        <strong>Påkrævet MakeCode udvidelse:</strong> Åbn MakeCode -&gt; Udvidelser -&gt; Søg efter{' '}
-                        <code className="bg-purple-900/60 px-1 py-0.5 rounded font-mono text-purple-300">
-                          {project.makeCode.extensionsNeeded.join(', ')}
-                        </code>
-                      </span>
+                    <div className="p-3.5 rounded-xl bg-purple-950/40 border border-purple-800/60 text-xs text-purple-200 flex items-center space-x-3">
+                      <Sparkles className="w-5 h-5 text-purple-400 shrink-0" />
+                      <div>
+                        <strong className="block font-semibold text-white mb-0.5">Påkrævet MakeCode udvidelse:</strong>
+                        <span>
+                          Før du kan finde alle blokkene, skal du åbne MakeCode &rarr; klikke på <strong>Udvidelser</strong> (nederst i menuen) &rarr; søge efter{' '}
+                          <code className="bg-purple-900/80 px-1.5 py-0.5 rounded font-mono text-purple-200 font-bold">
+                            {project.makeCode.extensionsNeeded.join(', ')}
+                          </code>
+                        </span>
+                      </div>
                     </div>
                   )}
 
-                  <div className="space-y-3">
-                    <h5 className="font-semibold text-white text-sm">Trin-for-trin guide i MakeCode editoren:</h5>
-                    <ol className="space-y-2">
-                      {project.makeCode.stepByStep.map((step, idx) => (
-                        <li key={idx} className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 text-xs sm:text-sm text-slate-300 flex items-start space-x-2.5">
-                          <span className="w-5 h-5 rounded-full bg-slate-700 text-slate-200 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
-                            {idx + 1}
-                          </span>
-                          <span>{step}</span>
-                        </li>
-                      ))}
-                    </ol>
+                  {/* SEKTION 1: VÆRKTØJSKASSE OVER BLOKKE */}
+                  {project.makeCode.requiredBlocks && project.makeCode.requiredBlocks.length > 0 && (
+                    <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h5 className="font-bold text-white text-sm flex items-center space-x-2">
+                          <span className="w-6 h-6 rounded-lg bg-cyan-500 text-slate-950 flex items-center justify-center text-xs font-black">1</span>
+                          <span>Find disse blokke i MakeCode menuen:</span>
+                        </h5>
+                        <span className="text-xs text-slate-400">
+                          Farvekodet efter MakeCode
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-400">
+                        Hver blok har en specifik farve, der matcher kategorien i menuen til venstre i MakeCode editoren:
+                      </p>
+                      <BlockPaletteGrid blocks={project.makeCode.requiredBlocks} />
+                    </div>
+                  )}
+
+                  {/* SEKTION 2: DETALJERET SAMLEVEJLEDNING TRIN FOR TRIN */}
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-2">
+                      <span className="w-6 h-6 rounded-lg bg-cyan-500 text-slate-950 flex items-center justify-center text-xs font-black">2</span>
+                      <h5 className="font-bold text-white text-base">Sådan samles blokkene (Trin-for-trin guide):</h5>
+                    </div>
+
+                    <div className="space-y-4">
+                      {project.makeCode.detailedSteps && project.makeCode.detailedSteps.length > 0 ? (
+                        project.makeCode.detailedSteps.map(step => (
+                          <div
+                            key={step.stepNumber}
+                            className="p-4 sm:p-5 rounded-2xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 transition space-y-3"
+                          >
+                            {/* Trin Header med Kategori og Blok-badge */}
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/80 pb-3">
+                              <div className="flex flex-wrap items-center gap-2">
+                                <span className="w-6 h-6 rounded-full bg-slate-800 text-cyan-400 border border-slate-700 flex items-center justify-center text-xs font-bold shrink-0">
+                                  {step.stepNumber}
+                                </span>
+                                <h6 className="font-bold text-white text-sm sm:text-base">
+                                  {step.title}
+                                </h6>
+                              </div>
+
+                              <div className="shrink-0 flex items-center space-x-2">
+                                <MakeCodeBlockBadge
+                                  block={{
+                                    name: step.blockName,
+                                    category: step.category,
+                                    categoryColor: step.categoryColor,
+                                    type: 'command'
+                                  }}
+                                />
+                              </div>
+                            </div>
+
+                            {/* Placering & Instruktion */}
+                            <div className="space-y-2 text-xs sm:text-sm">
+                              <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 flex items-start space-x-2">
+                                <strong className="text-cyan-400 shrink-0 font-medium">📍 Hvor placeres den:</strong>
+                                <span>{step.placement}</span>
+                              </div>
+
+                              <p className="text-slate-300 leading-relaxed pt-1">
+                                {step.instruction}
+                              </p>
+                            </div>
+
+                            {/* Specifikke indstillinger/værdier */}
+                            {step.settings && step.settings.length > 0 && (
+                              <div className="bg-slate-900/80 rounded-xl p-3 border border-slate-800 space-y-1.5">
+                                <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">
+                                  ⚙️ Indstillinger der skal rettes i blokken:
+                                </span>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                  {step.settings.map((s, idx) => (
+                                    <div key={idx} className="flex items-center space-x-2 text-xs bg-slate-950 px-2.5 py-1.5 rounded-lg border border-slate-800">
+                                      <span className="text-slate-400 font-medium">{s.field}:</span>
+                                      <strong className="text-cyan-300 font-mono">{s.setting}</strong>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+
+                            {/* Pædagogisk Tip */}
+                            {step.tip && (
+                              <div className="p-2.5 rounded-lg bg-amber-950/20 border border-amber-900/40 text-xs text-amber-200 flex items-start space-x-2">
+                                <Lightbulb className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                                <span>
+                                  <strong>Tip:</strong> {step.tip}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        ))
+                      ) : null}
+                    </div>
                   </div>
 
-                  {/* Kildekode i MakeCode TypeScript */}
-                  <div>
-                    <h5 className="font-semibold text-white text-xs uppercase tracking-wider mb-2">
-                      MakeCode JavaScript/TypeScript kode (kan indsættes direkte i MakeCode editoren):
-                    </h5>
-                    <pre className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-cyan-300 overflow-x-auto">
+                  {/* SEKTION 3: Kildekode i MakeCode TypeScript */}
+                  <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h5 className="font-semibold text-white text-xs uppercase tracking-wider flex items-center space-x-2">
+                        <span>💻 MakeCode JavaScript / TypeScript Kildekode</span>
+                      </h5>
+                      <span className="text-[11px] text-slate-500">
+                        Kan indsættes direkte i MakeCode editorens JavaScript fane
+                      </span>
+                    </div>
+                    <pre className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-300 overflow-x-auto">
                       <code>{project.makeCode.typescriptCode}</code>
                     </pre>
                   </div>

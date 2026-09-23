@@ -45,6 +45,29 @@ export interface ProjectExpansion {
   hint: string;
 }
 
+export interface MakeCodeBlockItem {
+  name: string;
+  category: string;
+  categoryColor: string;
+  type: 'event' | 'command' | 'boolean' | 'value' | 'container';
+  params?: string;
+}
+
+export interface MakeCodeDetailedStep {
+  stepNumber: number;
+  title: string;
+  category: string;
+  categoryColor: string;
+  blockName: string;
+  placement: string;
+  instruction: string;
+  settings?: {
+    field: string;
+    setting: string;
+  }[];
+  tip?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -63,7 +86,8 @@ export interface Project {
   algorithm: AlgorithmStep[];
   makeCode: {
     blocksDescription: string;
-    stepByStep: string[];
+    requiredBlocks: MakeCodeBlockItem[];
+    detailedSteps: MakeCodeDetailedStep[];
     extensionsNeeded: string[];
     shareUrl?: string;
     typescriptCode: string;
