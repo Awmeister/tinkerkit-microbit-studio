@@ -85,66 +85,66 @@ export const PROJECTS: Project[] = [
         {
           name: 'ved start',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'event'
         },
         {
           name: 'vis ikon [Glad]',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'command',
           params: 'Glad'
         },
         {
           name: 'pause (ms) [3000]',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'command',
           params: '3000'
         },
         {
           name: 'for evigt',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'event'
         },
         {
           name: 'hvis <sand> så ... ellers',
           category: 'Logik',
-          categoryColor: '#008272',
+          categoryColor: '#57a1a5',
           type: 'container'
         },
         {
           name: '[ 0 ] = [ 0 ] (sammenlign)',
           category: 'Logik',
-          categoryColor: '#008272',
+          categoryColor: '#57a1a5',
           type: 'boolean'
         },
         {
           name: 'læs digital værdi fra ben [P0]',
-          category: 'Avanceret -> Ben',
-          categoryColor: '#005A9E',
+          category: 'Pins',
+          categoryColor: '#9d322a',
           type: 'value',
           params: 'P0'
         },
         {
           name: 'vis ikon [Nej]',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'command',
           params: 'Nej'
         },
         {
           name: 'spil tone [Høj C] i [1/4 takt]',
           category: 'Musik',
-          categoryColor: '#E63022',
+          categoryColor: '#cb4430',
           type: 'command',
           params: 'Høj C'
         },
         {
           name: 'vis LED\'er',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'command'
         }
       ],
@@ -153,7 +153,7 @@ export const PROJECTS: Project[] = [
           stepNumber: 1,
           title: 'Klargør Opstarts- og Armeringstid',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           blockName: 'ved start + pause (ms)',
           placement: 'Placeres i arbejdsområdet som startblok.',
           instruction: 'Find "ved start" (blå). Træk "vis ikon [Glad]" ind i den. Gå derefter til Grundlæggende og træk blokken "pause (ms)" ind under ikonet. Skift tallet fra 100 til 3000 ms.',
@@ -167,7 +167,7 @@ export const PROJECTS: Project[] = [
           stepNumber: 2,
           title: 'Opret Overvågningsløkken',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           blockName: 'for evigt',
           placement: 'Placeres frit i arbejdsområdet ved siden af "ved start".',
           instruction: 'Træk den grønne/blå "for evigt" (forever) blok frem. Alt hvad vi lægger ind i denne blok, gentager microbitten tusindvis af gange i sekundet.',
@@ -177,7 +177,7 @@ export const PROJECTS: Project[] = [
           stepNumber: 3,
           title: 'Indsæt Logisk Beslutning (HVIS / ELLERS)',
           category: 'Logik',
-          categoryColor: '#008272',
+          categoryColor: '#57a1a5',
           blockName: 'hvis ... så ... ellers',
           placement: 'Trækkes direkte ind i midten af "for evigt" blokken.',
           instruction: 'Åbn menuen "Logik" (turkis). Træk blokken "hvis <sand> så ... ellers" ud og klik den fast inde i "for evigt". Hvis blokken kun viser "hvis ... så", klikker du på det lille "+"-ikon i bunden for at folde "ellers" ud.',
@@ -188,8 +188,8 @@ export const PROJECTS: Project[] = [
         {
           stepNumber: 4,
           title: 'Byg Sammenlignings-betingelsen',
-          category: 'Logik & Ben',
-          categoryColor: '#008272',
+          category: 'Logik',
+          categoryColor: '#57a1a5',
           blockName: '[læs digital værdi fra ben P0] = [ 1 ]',
           placement: 'Trækkes ind i det sekskantede felt ved siden af "hvis".',
           instruction: '1. Gå til "Logik" og find sammenligningsblokken "[ 0 ] = [ 0 ]". 2. Gå til "Avanceret" (klik nederst i menuen) -> vælg "Ben". 3. Find den runde blok "læs digital værdi fra ben [P0]" og træk den ind i det første nul i sammenligningen. 4. Skift det andet nul til 1.',
@@ -202,8 +202,8 @@ export const PROJECTS: Project[] = [
         {
           stepNumber: 5,
           title: 'Programmer Alarm-reaktionen (Når bevægelse = 1)',
-          category: 'Grundlæggende & Musik',
-          categoryColor: '#E63022',
+          category: 'Musik',
+          categoryColor: '#cb4430',
           blockName: 'vis ikon [Nej] + spil tone',
           placement: 'Trækkes ind i "så"-grenen lige under betingelsen.',
           instruction: '1. Fra "Grundlæggende": Træk "vis ikon [Nej]" (det store kryds) ind i "så". 2. Fra "Musik" (rød): Træk "spil tone [Høj C] i [1/4 takt]" ind under ikonet. 3. Træk endnu en tone-blok ind og sæt den til [Mellem G] for at skabe en to-tonet politisirene.',
@@ -216,7 +216,7 @@ export const PROJECTS: Project[] = [
           stepNumber: 6,
           title: 'Programmer Sikker-tilstand (Når der er ro)',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           blockName: 'vis LED\'er + pause (ms) [200]',
           placement: 'Trækkes ind i "ellers"-grenen i bunden af hvis-blokken.',
           instruction: 'Når der IKKE er bevægelse (sensoren er 0), skal alarmen forholde sig rolig. Træk blokken "vis LED\'er" ind under "ellers", og tænd kun den ene diode i midten (som en standbylampe på et TV). Tilføj "pause (ms) [200]".',
@@ -383,56 +383,56 @@ while True:
       requiredBlocks: [
         {
           name: 'sæt servo på ben [P2] til [0] grader',
-          category: 'Avanceret -> Ben',
-          categoryColor: '#005A9E',
+          category: 'Pins',
+          categoryColor: '#9d322a',
           type: 'command',
           params: 'P2, 0'
         },
         {
           name: 'vis ikon [Sover]',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'command',
           params: 'Sover'
         },
         {
           name: 'sæt [afstand] til [ ... ]',
           category: 'Variabler',
-          categoryColor: '#D13438',
+          categoryColor: '#c13541',
           type: 'command',
           params: 'afstand'
         },
         {
           name: 'sonar:bit distance to obstacle in cm at Pin [P1]',
-          category: 'TinkerKit (Udvidelse)',
-          categoryColor: '#F7630C',
+          category: 'Tinkercademy',
+          categoryColor: '#61b73a',
           type: 'value',
           params: 'P1'
         },
         {
           name: 'hvis < [afstand] < [15] > så',
           category: 'Logik',
-          categoryColor: '#008272',
+          categoryColor: '#57a1a5',
           type: 'container'
         },
         {
           name: 'sæt servo på ben [P2] til [110] grader',
-          category: 'Avanceret -> Ben',
-          categoryColor: '#005A9E',
+          category: 'Pins',
+          categoryColor: '#9d322a',
           type: 'command',
           params: 'P2, 110'
         },
         {
           name: 'pause (ms) [3000]',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'command',
           params: '3000'
         },
         {
           name: 'spil lyd [Giggle]',
           category: 'Musik',
-          categoryColor: '#E63022',
+          categoryColor: '#cb4430',
           type: 'command',
           params: 'Giggle'
         }
@@ -440,22 +440,22 @@ while True:
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Hent TinkerKit Udvidelsen i MakeCode',
+          title: 'Hent Tinkercademy Udvidelsen i MakeCode',
           category: 'Udvidelser',
-          categoryColor: '#F7630C',
+          categoryColor: '#717171',
           blockName: 'Tilføj pakken "tinkerkit"',
           placement: 'Klik på tandhjulet eller "Udvidelser" i bunden af blokmenuen.',
-          instruction: 'I MakeCode klikker du på "Udvidelser" (Extensions). Søg efter "tinkerkit" i søgefeltet og klik på den officielle ElecFreaks TinkerKit pakke. Der dukker nu nye menuer op til Sonar, Servo og OLED!',
+          instruction: 'I MakeCode klikker du på "Udvidelser" (Extensions). Søg efter "tinkerkit" i søgefeltet og klik på den officielle ElecFreaks Tinkercademy pakke. Der dukker nu nye menuer op til Sonar, Servo og OLED!',
           tip: 'Hvis du ikke kan søge online, kan du også bruge den indbyggede "Ben"-menu til servostyring.'
         },
         {
           stepNumber: 2,
           title: 'Luk Låget ved Opstart',
-          category: 'Avanceret -> Ben',
-          categoryColor: '#005A9E',
+          category: 'Pins',
+          categoryColor: '#9d322a',
           blockName: 'sæt servo på ben [P2] til [0]',
           placement: 'Trækkes ind i "ved start".',
-          instruction: 'Gå til "Avanceret" -> "Ben" (eller "TinkerKit"). Find blokken "sæt servo på ben [P0] til [180]". Skift dropdown-menuen fra P0 til P2, og ret 180 til 0 grader (lukket position). Træk derefter "vis ikon [Sover]" ind.',
+          instruction: 'Gå til "Avanceret" -> "Ben" (eller "Tinkercademy"). Find blokken "sæt servo på ben [P0] til [180]". Skift dropdown-menuen fra P0 til P2, og ret 180 til 0 grader (lukket position). Træk derefter "vis ikon [Sover]" ind.',
           settings: [
             { field: 'Ben', setting: 'P2' },
             { field: 'Vinkel', setting: '0 grader' }
@@ -465,7 +465,7 @@ while True:
           stepNumber: 3,
           title: 'Opret Variablen "afstand"',
           category: 'Variabler',
-          categoryColor: '#D13438',
+          categoryColor: '#c13541',
           blockName: 'sæt [afstand] til ...',
           placement: 'Øverst i "for evigt" løkken.',
           instruction: 'Klik på "Variabler" (rød) -> "Opret variabel" -> skriv navnet "afstand". Træk blokken "sæt [afstand] til [0]" ud og læg den øverst i "for evigt".',
@@ -474,11 +474,11 @@ while True:
         {
           stepNumber: 4,
           title: 'Aflæs Ultralydsafstanden fra Sonar:bit',
-          category: 'TinkerKit (Sonar)',
-          categoryColor: '#F7630C',
+          category: 'Sonar',
+          categoryColor: '#323e4e',
           blockName: 'sonar:bit distance to obstacle in cm at Pin [P1]',
           placement: 'Trækkes ind i det runde 0-felt i "sæt [afstand] til ...".',
-          instruction: 'Find den ovale blok "sonar:bit distance to obstacle in cm at Pin [P1]" under TinkerKit/Sonar, og slip den ind i feltet på din variabelblok. Sørg for at benet er sat til P1.',
+          instruction: 'Find den ovale blok "sonar:bit distance to obstacle in cm at Pin [P1]" under Tinkercademy/Sonar, og slip den ind i feltet på din variabelblok. Sørg for at benet er sat til P1.',
           settings: [
             { field: 'Pin', setting: 'P1 (Hvor Sonar:bit er forbundet)' },
             { field: 'Enhed', setting: 'Centimeter (cm)' }
@@ -488,7 +488,7 @@ while True:
           stepNumber: 5,
           title: 'Tjek om en Hånd er Nær (Under 15 cm)',
           category: 'Logik',
-          categoryColor: '#008272',
+          categoryColor: '#57a1a5',
           blockName: 'hvis < [afstand] > 0 og [afstand] < 15 > så',
           placement: 'Lige under afstandsmålingen i "for evigt".',
           instruction: 'Gå til "Logik". Hent "hvis <sand> så". I betingelsen indsætter du en sammenligning: "[afstand] < 15".',
@@ -499,8 +499,8 @@ while True:
         {
           stepNumber: 6,
           title: 'Åbn Låget, Vent 3 Sekunder og Luk Igen',
-          category: 'Avanceret -> Ben & Grundlæggende',
-          categoryColor: '#005A9E',
+          category: 'Pins',
+          categoryColor: '#9d322a',
           blockName: 'servo til 110 -> pause 3000 -> servo til 0',
           placement: 'Inde i "hvis ... så" blokken.',
           instruction: '1. Sæt "servo på ben P2 til 110" (åbner låget). 2. Fra "Musik": Spil lydeffekt "Giggle". 3. Fra "Grundlæggende": "pause (ms) [3000]" (holder låget åbent). 4. Sæt "servo på ben P2 til 0" (lukker låget igen). 5. "vis ikon [Sover]".',
@@ -651,55 +651,55 @@ while True:
       requiredBlocks: [
         {
           name: 'initialize OLED with height [64] width [128]',
-          category: 'OLED (Udvidelse)',
-          categoryColor: '#374151',
+          category: 'OLED',
+          categoryColor: '#64adb8',
           type: 'command',
           params: '64, 128'
         },
         {
           name: 'clear OLED display',
-          category: 'OLED (Udvidelse)',
-          categoryColor: '#374151',
+          category: 'OLED',
+          categoryColor: '#64adb8',
           type: 'command'
         },
         {
           name: 'læs analog værdi fra ben [P1]',
-          category: 'Avanceret -> Ben',
-          categoryColor: '#005A9E',
+          category: 'Pins',
+          categoryColor: '#9d322a',
           type: 'value',
           params: 'P1'
         },
         {
           name: 'kortlæg [værdi] fra lav [0] høj [750] til lav [0] høj [100]',
           category: 'Matematik',
-          categoryColor: '#742774',
+          categoryColor: '#852ccb',
           type: 'value'
         },
         {
           name: 'show string [ ... ] on OLED',
-          category: 'OLED (Udvidelse)',
-          categoryColor: '#374151',
+          category: 'OLED',
+          categoryColor: '#64adb8',
           type: 'command'
         },
         {
           name: 'show number [ ... ] on OLED',
-          category: 'OLED (Udvidelse)',
-          categoryColor: '#374151',
+          category: 'OLED',
+          categoryColor: '#64adb8',
           type: 'command'
         },
         {
           name: 'når logo berøres',
           category: 'Input',
-          categoryColor: '#D400D4',
+          categoryColor: '#bc38cd',
           type: 'event'
         }
       ],
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Hent TinkerKit/OLED Udvidelsen',
+          title: 'Hent Tinkercademy/OLED Udvidelsen',
           category: 'Udvidelser',
-          categoryColor: '#F7630C',
+          categoryColor: '#717171',
           blockName: 'Tilføj "tinkerkit"',
           placement: 'Udvidelser menuen.',
           instruction: 'Åbn "Udvidelser" og tilføj "tinkerkit". Dette tilføjer OLED-kategorien i din venstre blokmenu.',
@@ -708,8 +708,8 @@ while True:
         {
           stepNumber: 2,
           title: 'Tænd og Klargør OLED-skærmen',
-          category: 'OLED (Udvidelse)',
-          categoryColor: '#374151',
+          category: 'OLED',
+          categoryColor: '#64adb8',
           blockName: 'initialize OLED with height [64] width [128]',
           placement: 'Inde i "ved start".',
           instruction: 'Træk "initialize OLED with height 64 width 128" ind i "ved start". Skærmen har en opløsning på 128 pixels i bredden og 64 pixels i højden.',
@@ -721,11 +721,11 @@ while True:
         {
           stepNumber: 3,
           title: 'Aflæs det Analoge Signal fra P1',
-          category: 'Avanceret -> Ben',
-          categoryColor: '#005A9E',
+          category: 'Pins',
+          categoryColor: '#9d322a',
           blockName: 'læs analog værdi fra ben [P1]',
           placement: 'Inde i "for evigt" ind i en variabel "raafugt".',
-          instruction: 'Opret variablen "raafugt". Sæt den til "læs analog værdi fra ben P1" (findes under Avanceret -> Ben). Da fugtsensoren er analog, giver den et tal fra 0 til ca. 750 afhængig af jordens fugtighed.',
+          instruction: 'Opret variablen "raafugt". Sæt den til "læs analog værdi fra ben P1" (findes under Pins). Da fugtsensoren er analog, giver den et tal fra 0 til ca. 750 afhængig af jordens fugtighed.',
           settings: [
             { field: 'Ben', setting: 'P1' }
           ]
@@ -734,7 +734,7 @@ while True:
           stepNumber: 4,
           title: 'Omregn til Procent med Matematik-kortlægning',
           category: 'Matematik',
-          categoryColor: '#742774',
+          categoryColor: '#852ccb',
           blockName: 'kortlæg [raafugt] fra [0 - 750] til [0 - 100]',
           placement: 'I en ny variabel "procent".',
           instruction: 'Gå til "Matematik" (lilla). Find den geniale blok "kortlæg [0] fra lav [0] høj [1023] til lav [0] høj [100]". Træk din variabel "raafugt" ind i første felt, og ret høj fra 1023 til 750. Nu har du et flot procenttal fra 0% til 100%!',
@@ -746,8 +746,8 @@ while True:
         {
           stepNumber: 5,
           title: 'Udskriv Målingen på OLED Displayet',
-          category: 'OLED (Udvidelse)',
-          categoryColor: '#374151',
+          category: 'OLED',
+          categoryColor: '#64adb8',
           blockName: 'clear OLED + show string + show number',
           placement: 'I "for evigt" løkken efter beregningen.',
           instruction: '1. "clear OLED display" (renser skærmen). 2. "show string [Fugtighed:]". 3. "show number [procent]". 4. "show string [%]". 5. Hvis procent < 30: "show string [VAND MIG!]". Ellers: "show string [Planten har det godt]". 6. Pause 3000 ms.',
@@ -909,39 +909,39 @@ while True:
         {
           name: 'for evigt',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'event'
         },
         {
           name: 'sonar:bit distance to obstacle in cm at Pin [P1]',
-          category: 'TinkerKit (Sonar)',
-          categoryColor: '#F7630C',
+          category: 'Sonar',
+          categoryColor: '#323e4e',
           type: 'value',
           params: 'P1'
         },
         {
           name: 'hvis < ... > så ... ellers hvis < ... > så ... ellers',
           category: 'Logik',
-          categoryColor: '#008272',
+          categoryColor: '#57a1a5',
           type: 'container'
         },
         {
           name: 'spil tone [Høj C] i [1/16 takt]',
           category: 'Musik',
-          categoryColor: '#E63022',
+          categoryColor: '#cb4430',
           type: 'command',
           params: 'Høj C'
         },
         {
           name: 'pause (ms) [ (afstand) * (20) ]',
-          category: 'Grundlæggende & Matematik',
-          categoryColor: '#742774',
+          category: 'Grundlæggende',
+          categoryColor: '#5891f7',
           type: 'command'
         },
         {
           name: 'vis ikon [Nej] / [Firkant]',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'command'
         }
       ],
@@ -949,18 +949,18 @@ while True:
         {
           stepNumber: 1,
           title: 'Mål Afstand med Sonar:bit',
-          category: 'TinkerKit & Variabler',
-          categoryColor: '#F7630C',
+          category: 'Tinkercademy',
+          categoryColor: '#61b73a',
           blockName: 'sæt [afstand] til sonar:bit måling',
           placement: 'Øverst i "for evigt".',
-          instruction: 'Opret variablen "afstand". Sæt den til blokken "sonar:bit distance to obstacle in cm at Pin P1" fra TinkerKit udvidelsen.',
+          instruction: 'Opret variablen "afstand". Sæt den til blokken "sonar:bit distance to obstacle in cm at Pin P1" fra Tinkercademy udvidelsen.',
           settings: [{ field: 'Pin', setting: 'P1' }]
         },
         {
           stepNumber: 2,
           title: 'Kritisk Zone: STOP (Under 5 cm)',
           category: 'Logik',
-          categoryColor: '#008272',
+          categoryColor: '#57a1a5',
           blockName: 'hvis < [afstand] <= 5 > så',
           placement: 'Første gren i hvis-blokken.',
           instruction: 'HVIS afstand <= 5: Vis ikon [Nej] (det store røde kryds) og spil konstant høj tone (Høj B / 988 Hz) i ultrakort tid.',
@@ -969,8 +969,8 @@ while True:
         {
           stepNumber: 3,
           title: 'Advarselszone: Hurtigere Bip jo tættere på',
-          category: 'Logik & Matematik',
-          categoryColor: '#008272',
+          category: 'Logik',
+          categoryColor: '#57a1a5',
           blockName: 'ellers hvis < [afstand] <= 35 > så',
           placement: 'Anden gren i hvis-blokken (klik på + for at tilføje "ellers hvis").',
           instruction: 'HVIS afstanden er mellem 5 og 35 cm: 1. Vis ikon [Firkant]. 2. Spil tone [Mellem E]. 3. Sæt "pause (ms)" til et regnestykke: Fra Matematik trækker du multiplikationsblokken "[ 0 ] x [ 0 ]" ud og sætter den til "[afstand] x 20".',
@@ -984,7 +984,7 @@ while True:
           stepNumber: 4,
           title: 'Sikker Zone: Ingen bip',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           blockName: 'ellers: vis ikon [Lille Firkant]',
           placement: 'I den sidste "ellers"-gren.',
           instruction: 'Når bilen er over 35 cm væk fra muren, vises blot en lille prik/firkant på displayet, og højttaleren er tavs.',
@@ -1119,33 +1119,33 @@ while True:
         {
           name: 'når der trykkes på knap [A]',
           category: 'Input',
-          categoryColor: '#D400D4',
+          categoryColor: '#bc38cd',
           type: 'event',
           params: 'Knap A'
         },
         {
           name: 'vælg tilfældigt tal fra [2000] til [5000]',
           category: 'Matematik',
-          categoryColor: '#742774',
+          categoryColor: '#852ccb',
           type: 'value',
           params: '2000 - 5000'
         },
         {
           name: 'køretid (ms)',
-          category: 'Avanceret -> Styring',
-          categoryColor: '#0078D7',
+          category: 'Kontrol',
+          categoryColor: '#333333',
           type: 'value'
         },
         {
           name: 'mens < [læs digital værdi fra ben P1] != 0 > gentag',
           category: 'Løkker',
-          categoryColor: '#107C41',
+          categoryColor: '#56a530',
           type: 'container'
         },
         {
           name: 'vis nummer [reaktionstid]',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'command'
         }
       ],
@@ -1154,7 +1154,7 @@ while True:
           stepNumber: 1,
           title: 'Start Spillet med Knap A',
           category: 'Input',
-          categoryColor: '#D400D4',
+          categoryColor: '#bc38cd',
           blockName: 'når der trykkes på knap [A]',
           placement: 'I arbejdsområdet som hændelsesblok.',
           instruction: 'Find den lilla "når der trykkes på knap [A]" blok. Vis ikonet [Lille diamant] som indikation af, at spillet er i gang med at varme op.',
@@ -1163,8 +1163,8 @@ while True:
         {
           stepNumber: 2,
           title: 'Generer Tilfældig Ventetid',
-          category: 'Matematik & Grundlæggende',
-          categoryColor: '#742774',
+          category: 'Matematik',
+          categoryColor: '#852ccb',
           blockName: 'pause (ms) [ vælg tilfældigt fra 2000 til 5000 ]',
           placement: 'Inde i knap A blokken.',
           instruction: 'Gå til "Matematik" og træk "vælg tilfældigt fra [0] til [10]" ind i feltet på en "pause (ms)" blok. Ret tallene til 2000 og 5000 ms (2 til 5 sekunder).',
@@ -1173,18 +1173,18 @@ while True:
         {
           stepNumber: 3,
           title: 'Giv Startsignal og Start Tiden',
-          category: 'Grundlæggende & Styring',
-          categoryColor: '#0078D7',
+          category: 'Grundlæggende',
+          categoryColor: '#5891f7',
           blockName: 'vis ikon [Målskive] + sæt startTid til køretid (ms)',
           placement: 'Lige efter pausen.',
-          instruction: '1. "vis ikon [Målskive]". 2. Fra Musik: Spil opstartslyd. 3. Opret variablen "startTid" og sæt den til blokken "køretid (ms)" (findes under Avanceret -> Styring).',
+          instruction: '1. "vis ikon [Målskive]". 2. Fra Musik: Spil opstartslyd. 3. Opret variablen "startTid" og sæt den til blokken "køretid (ms)" (findes under Kontrol).',
           settings: [{ field: 'Variabel', setting: 'startTid' }]
         },
         {
           stepNumber: 4,
           title: 'Vent på at Spilleren Hamrer på Crash Sensoren',
-          category: 'Løkker & Ben',
-          categoryColor: '#107C41',
+          category: 'Løkker',
+          categoryColor: '#56a530',
           blockName: 'mens < læs digital værdi fra ben P1 != 0 >',
           placement: 'Efter tidsstempling.',
           instruction: 'Fra "Løkker" (grøn): Hent "mens <sand> gentag". I betingelsen sætter du: "læs digital værdi fra ben P1 != 0". Løkken holdes tom. Microbitten venter her, indtil sensoren presses ned!',
@@ -1193,8 +1193,8 @@ while True:
         {
           stepNumber: 5,
           title: 'Beregn og Vis Reaktionstiden i Millisekunder',
-          category: 'Matematik & Grundlæggende',
-          categoryColor: '#742774',
+          category: 'Matematik',
+          categoryColor: '#852ccb',
           blockName: 'sæt reaktionstid til [køretid (ms) - startTid]',
           placement: 'Lige efter mens-løkken.',
           instruction: 'Opret variablen "reaktionstid". Sæt den til: "køretid (ms) minus startTid". Vis tallet med "vis nummer [reaktionstid]". Spil succeslyd!',
@@ -1355,34 +1355,34 @@ while True:
       requiredBlocks: [
         {
           name: 'initialize OLED with height [64] width [128]',
-          category: 'OLED (Udvidelse)',
-          categoryColor: '#374151',
+          category: 'OLED',
+          categoryColor: '#64adb8',
           type: 'command'
         },
         {
           name: 'sæt servo på ben [P1] til [0] grader',
-          category: 'Avanceret -> Ben',
-          categoryColor: '#005A9E',
+          category: 'Pins',
+          categoryColor: '#9d322a',
           type: 'command',
           params: 'P1, 0'
         },
         {
           name: 'ADKeypad button [A] is pressed on Pin [P2]',
-          category: 'TinkerKit (Udvidelse)',
-          categoryColor: '#F7630C',
+          category: 'Tinkercademy',
+          categoryColor: '#61b73a',
           type: 'boolean',
           params: 'A, P2'
         },
         {
           name: 'sæt [indtastet] til [forbind (indtastet) ("A")]',
-          category: 'Tekst & Variabler',
-          categoryColor: '#107C41',
+          category: 'Tekst',
+          categoryColor: '#ac872f',
           type: 'command'
         },
         {
           name: 'hvis < [indtastet] = [hemmeligKode] > så',
           category: 'Logik',
-          categoryColor: '#008272',
+          categoryColor: '#57a1a5',
           type: 'container'
         }
       ],
@@ -1390,8 +1390,8 @@ while True:
         {
           stepNumber: 1,
           title: 'Initialiser Hardware og Sæt Låsen',
-          category: 'OLED & Ben',
-          categoryColor: '#374151',
+          category: 'OLED',
+          categoryColor: '#64adb8',
           blockName: 'OLED init + servo til 0',
           placement: 'I "ved start".',
           instruction: '1. "initialize OLED with height 64 width 128". 2. "sæt servo på ben P1 til 0" (låst tilstand). 3. Opret variablen "hemmeligKode" og sæt den til teksten "AB". 4. Opret variablen "indtastet" og sæt den til tom tekst "".',
@@ -1403,8 +1403,8 @@ while True:
         {
           stepNumber: 2,
           title: 'Registrer Tastetryk fra ADKeypad',
-          category: 'TinkerKit',
-          categoryColor: '#F7630C',
+          category: 'Tinkercademy',
+          categoryColor: '#61b73a',
           blockName: 'ADKeypad button [A] is pressed on Pin [P2]',
           placement: 'I "for evigt".',
           instruction: 'Brug blokken "hvis <ADKeypad button [A] is pressed on Pin P2>". Når den trykkes: Føj "A" til variablen "indtastet", spil et klik og skriv "*" på OLED.',
@@ -1413,8 +1413,8 @@ while True:
         {
           stepNumber: 3,
           title: 'Lås op ved Korrekt Kode',
-          category: 'Logik & Ben',
-          categoryColor: '#008272',
+          category: 'Logik',
+          categoryColor: '#57a1a5',
           blockName: 'hvis < indtastet == hemmeligKode > så servo til 90',
           placement: 'Når længden af indtastet er 2.',
           instruction: 'Når brugeren har trykket 2 taster: Hvis teksten matcher "hemmeligKode", drejes servoen på P1 til 90 grader (låst op), og displayet viser "VELKOMMEN!". Efter 5 sekunder drejer servoen tilbage til 0 grader (automatisk genlåsning).',
@@ -1569,33 +1569,33 @@ pass`,
         {
           name: 'ved høj lyd',
           category: 'Input',
-          categoryColor: '#D400D4',
+          categoryColor: '#bc38cd',
           type: 'event'
         },
         {
           name: 'lysniveau',
           category: 'Input',
-          categoryColor: '#D400D4',
+          categoryColor: '#bc38cd',
           type: 'value'
         },
         {
           name: 'sæt lysstyrke til [120]',
           category: 'LED',
-          categoryColor: '#5C2D91',
+          categoryColor: '#56358c',
           type: 'command',
           params: '120'
         },
         {
           name: 'vis ikon [Hjerte]',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'command',
           params: 'Hjerte'
         },
         {
           name: 'ryd skærm',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'command'
         }
       ],
@@ -1603,8 +1603,8 @@ pass`,
         {
           stepNumber: 1,
           title: 'Definer Natlampens Tilstand',
-          category: 'Variabler & LED',
-          categoryColor: '#D13438',
+          category: 'Variabler',
+          categoryColor: '#c13541',
           blockName: 'sæt lampeTaendt til FALSK + dæmp lysstyrke',
           placement: 'I "ved start".',
           instruction: '1. Opret en sand/falsk variabel "lampeTaendt" og sæt den til "falsk" (findes under Logik). 2. Fra "LED" menuen vælges "sæt lysstyrke til [120]" så natlyset ikke blænder om natten.',
@@ -1614,7 +1614,7 @@ pass`,
           stepNumber: 2,
           title: 'Registrer Klap med v2 Mikrofonen',
           category: 'Input',
-          categoryColor: '#D400D4',
+          categoryColor: '#bc38cd',
           blockName: 'ved høj lyd (on loud sound)',
           placement: 'I arbejdsområdet som hændelsesblok.',
           instruction: 'Find den lilla blok "ved høj lyd". Den reagerer automatisk på et klap i hænderne eller et højt knips med fingrene.',
@@ -1623,8 +1623,8 @@ pass`,
         {
           stepNumber: 3,
           title: 'Tjek om Rummet er Mørkt',
-          category: 'Logik & Input',
-          categoryColor: '#008272',
+          category: 'Logik',
+          categoryColor: '#57a1a5',
           blockName: 'hvis < [lysniveau] < 70 > så',
           placement: 'Inde i "ved høj lyd" blokken.',
           instruction: 'Vi vil kun tænde natlampen, hvis det er mørkt! Indsæt en hvis-blok med betingelsen "lysniveau < 70" (blokken lysniveau findes under Input).',
@@ -1633,8 +1633,8 @@ pass`,
         {
           stepNumber: 4,
           title: 'Vend Tilstanden (Toggle Tænd/Sluk)',
-          category: 'Logik & Grundlæggende',
-          categoryColor: '#008272',
+          category: 'Logik',
+          categoryColor: '#57a1a5',
           blockName: 'hvis lampeTaendt er sand -> sluk, ellers tænd',
           placement: 'Inde i mørkebetingelsen.',
           instruction: 'HVIS lampeTaendt er falsk: Sæt den til sand, vis ikon [Hjerte] og spil godnattone. ELLERS: Sæt den til falsk og "ryd skærm" for at slukke.',
@@ -1790,34 +1790,34 @@ while True:
       requiredBlocks: [
         {
           name: 'læs analog værdi fra ben [P1]',
-          category: 'Avanceret -> Ben',
-          categoryColor: '#005A9E',
+          category: 'Pins',
+          categoryColor: '#9d322a',
           type: 'value',
           params: 'P1'
         },
         {
           name: 'kortlæg [0] fra [0 - 1023] til [131 - 988]',
           category: 'Matematik',
-          categoryColor: '#742774',
+          categoryColor: '#852ccb',
           type: 'value'
         },
         {
           name: 'hældning (grader) [rulning]',
           category: 'Input',
-          categoryColor: '#D400D4',
+          categoryColor: '#bc38cd',
           type: 'value',
           params: 'rulning'
         },
         {
           name: 'ring tone [ ... ] (Hz)',
           category: 'Musik',
-          categoryColor: '#E63022',
+          categoryColor: '#cb4430',
           type: 'command'
         },
         {
           name: 'når logo berøres',
           category: 'Input',
-          categoryColor: '#D400D4',
+          categoryColor: '#bc38cd',
           type: 'event'
         }
       ],
@@ -1825,8 +1825,8 @@ while True:
         {
           stepNumber: 1,
           title: 'Læs Potentiometerets Drejeposition',
-          category: 'Avanceret -> Ben',
-          categoryColor: '#005A9E',
+          category: 'Pins',
+          categoryColor: '#9d322a',
           blockName: 'læs analog værdi fra ben [P1]',
           placement: 'I "for evigt" ind i en variabel "pot".',
           instruction: 'Potentiometeret drejer en modstand, som giver microbitten et tal fra 0 (helt mod uret) til 1023 (helt med uret) på Pin 1.',
@@ -1836,7 +1836,7 @@ while True:
           stepNumber: 2,
           title: 'Oversæt Værdien til Musiske Frekvenser',
           category: 'Matematik',
-          categoryColor: '#742774',
+          categoryColor: '#852ccb',
           blockName: 'kortlæg [pot] fra [0-1023] til [131-988]',
           placement: 'I variablen "frekvens".',
           instruction: 'Brug "kortlæg" blokken fra Matematik. 131 Hz svarer til en dyb C3 node på et klaver, og 988 Hz er en høj B5 diskant-tone.',
@@ -1848,8 +1848,8 @@ while True:
         {
           stepNumber: 3,
           title: 'Moduler Tonen med Microbitten i Luften',
-          category: 'Input & Matematik',
-          categoryColor: '#D400D4',
+          category: 'Input',
+          categoryColor: '#bc38cd',
           blockName: 'frekvens + (hældning rulning * 2)',
           placement: 'Lige før tonen spilles.',
           instruction: 'Hent "hældning (grader) [rulning]" fra Input. Læg dette til frekvensen for at skabe en sjov vibrato/theremin-effekt, når du vipper microbitten!',
@@ -1859,7 +1859,7 @@ while True:
           stepNumber: 4,
           title: 'Afspil Tonen Kontinuerligt',
           category: 'Musik',
-          categoryColor: '#E63022',
+          categoryColor: '#cb4430',
           blockName: 'ring tone [frekvens] (Hz)',
           placement: 'Nederst i "for evigt" med pause (ms) [50].',
           instruction: 'Brug blokken "ring tone" (i stedet for "spil tone"). Den holder tonen kørende uden afbrydelse.',
@@ -1998,34 +1998,34 @@ while True:
       requiredBlocks: [
         {
           name: 'initialize OLED with height [64] width [128]',
-          category: 'OLED (Udvidelse)',
-          categoryColor: '#374151',
+          category: 'OLED',
+          categoryColor: '#64adb8',
           type: 'command'
         },
         {
           name: 'hældning (grader) [rulning]',
           category: 'Input',
-          categoryColor: '#D400D4',
+          categoryColor: '#bc38cd',
           type: 'value',
           params: 'rulning'
         },
         {
           name: 'hældning (grader) [stigning]',
           category: 'Input',
-          categoryColor: '#D400D4',
+          categoryColor: '#bc38cd',
           type: 'value',
           params: 'stigning'
         },
         {
           name: 'absolut værdi af [ ... ]',
           category: 'Matematik',
-          categoryColor: '#742774',
+          categoryColor: '#852ccb',
           type: 'value'
         },
         {
           name: 'spil tone [Høj C] i [1/16 takt]',
           category: 'Musik',
-          categoryColor: '#E63022',
+          categoryColor: '#cb4430',
           type: 'command'
         }
       ],
@@ -2034,7 +2034,7 @@ while True:
           stepNumber: 1,
           title: 'Initialiser OLED Skærmen',
           category: 'OLED',
-          categoryColor: '#374151',
+          categoryColor: '#64adb8',
           blockName: 'initialize OLED 64x128',
           placement: 'I "ved start".',
           instruction: 'Tænd OLED-displayet i "ved start".',
@@ -2043,8 +2043,8 @@ while True:
         {
           stepNumber: 2,
           title: 'Aflæs Hældningsvinkler for Rulning og Stigning',
-          category: 'Input & Variabler',
-          categoryColor: '#D400D4',
+          category: 'Input',
+          categoryColor: '#bc38cd',
           blockName: 'hældning (grader) [rulning] og [stigning]',
           placement: 'I "for evigt".',
           instruction: 'Gem vinklerne i to variabler: "roll" (sidehældning) og "pitch" (frem/tilbage hældning). Værdierne er i grader.',
@@ -2056,8 +2056,8 @@ while True:
         {
           stepNumber: 3,
           title: 'Tjek om Overfladen er 100% Vandret',
-          category: 'Matematik & Logik',
-          categoryColor: '#742774',
+          category: 'Matematik',
+          categoryColor: '#852ccb',
           blockName: 'hvis < abs(roll) <= 2 og abs(pitch) <= 2 >',
           placement: 'I hvis-blokken.',
           instruction: 'Brug "absolut værdi af" fra Matematik. Hvis begge vinkler er inden for 2 grader af nul: Vis "100% VANDRET!" på OLED og spil et lille godkendt-bip!',
@@ -2198,34 +2198,34 @@ while True:
       requiredBlocks: [
         {
           name: 'sonar:bit distance to obstacle in cm at Pin [P1]',
-          category: 'TinkerKit (Sonar)',
-          categoryColor: '#F7630C',
+          category: 'Sonar',
+          categoryColor: '#323e4e',
           type: 'value',
           params: 'P1'
         },
         {
           name: 'hvis < [afstand] <= 12 > så',
           category: 'Logik',
-          categoryColor: '#008272',
+          categoryColor: '#57a1a5',
           type: 'container'
         },
         {
           name: 'for [indeks] fra [0] til [20]',
           category: 'Løkker',
-          categoryColor: '#107C41',
+          categoryColor: '#56a530',
           type: 'container',
           params: '20'
         },
         {
           name: 'vis nummer [ ... ]',
           category: 'Grundlæggende',
-          categoryColor: '#0078D7',
+          categoryColor: '#5891f7',
           type: 'command'
         },
         {
           name: 'spil lyd [Hello] og [Happy]',
           category: 'Musik',
-          categoryColor: '#E63022',
+          categoryColor: '#cb4430',
           type: 'command'
         }
       ],
@@ -2233,8 +2233,8 @@ while True:
         {
           stepNumber: 1,
           title: 'Overvåg Håndvask-zonen',
-          category: 'TinkerKit & Logik',
-          categoryColor: '#F7630C',
+          category: 'Sonar',
+          categoryColor: '#323e4e',
           blockName: 'hvis < afstand <= 12 og afstand > 0 > så',
           placement: 'I "for evigt".',
           instruction: 'Mål afstanden med Sonar:bit på Pin 1. Hvis afstanden er under 12 cm, betyder det at nogen har placeret hænderne under vandhanen for at vaske hænder!',
@@ -2244,7 +2244,7 @@ while True:
           stepNumber: 2,
           title: 'Start 20-Sekunders Nedtællingen',
           category: 'Løkker',
-          categoryColor: '#107C41',
+          categoryColor: '#56a530',
           blockName: 'for [sekund] fra [20] ned til [0]',
           placement: 'Inde i hvis-blokken.',
           instruction: 'Hent tæller-løkken fra "Løkker". Kør den 20 gange med "pause (ms) [1000]" for hvert sekund. Vis det resterende sekundtal på 5x5 LED skærmen!',
@@ -2256,8 +2256,8 @@ while True:
         {
           stepNumber: 3,
           title: 'Fejr med Succeslyd og Flueben',
-          category: 'Grundlæggende & Musik',
-          categoryColor: '#0078D7',
+          category: 'Musik',
+          categoryColor: '#cb4430',
           blockName: 'vis ikon [Ja] + spil lyd [Happy]',
           placement: 'Lige efter tæller-løkken.',
           instruction: 'Når de 20 sekunder er gået, er hænderne rene! Vis det store flueben [Ja] og afspil en munter succes-lyd over v2-højttaleren.',
