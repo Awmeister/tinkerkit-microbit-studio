@@ -100,7 +100,7 @@ export const SENSORS: Sensor[] = [
   },
   {
     id: 'buzzer',
-    name: 'Passiv Buzzer (Piezo Lydgiver)',
+    name: 'Passiv buzzer (piezo-lydgiver)',
     category: 'tinker_kit',
     shortDesc: 'Ekstern lydgiver der kan frembringe frekvenser, toner og alarmer.',
     description: 'En lille piezo-elektrisk summer. Ved at sende firkantbølger (PWM) med forskellige frekvenser kan den spille noder og melodier.',
@@ -111,10 +111,10 @@ export const SENSORS: Sensor[] = [
     techTip: 'Bemærk at micro:bit v2 allerede har en indbygget højtaler, men denne eksterne buzzer er rigtig god, hvis man vil placere lyden fysisk et andet sted i en model eller have skarpere diskanttoner.',
   },
 
-  // --- BBC MICRO:BIT V2 INDBYGGEDE SENSORER & FUNKTIONER ---
+  // --- BBC MICRO:BIT V2 INDBYGGEDE SENSORER OG FUNKTIONER ---
   {
     id: 'mb_mic',
-    name: 'Mikrofon & Lydsensor (v2)',
+    name: 'Mikrofon og lydsensor (v2)',
     category: 'microbit_v2',
     shortDesc: 'Indbygget mikrofon på v2 der måler lydstyrke og høje lyde (klap).',
     description: 'Micro:bit v2 har en indbygget MEMS-mikrofon og en lille rød indikator-LED på forsiden. Den kan måle omgivende lydniveau på en skala fra 0-255 samt automatisk trigge ved "høj lyd" som et klap eller råb.',
@@ -126,7 +126,7 @@ export const SENSORS: Sensor[] = [
   },
   {
     id: 'mb_speaker',
-    name: 'Indbygget Højttaler (v2)',
+    name: 'Indbygget højttaler (v2)',
     category: 'microbit_v2',
     shortDesc: 'Spiller lydeffekter, melodier og talesyntese direkte fra microbitten.',
     description: 'På bagsiden af micro:bit v2 sidder en integreret magnetisk højttaler. Den kan afspille lydeffekter som glæde, tristhed, overraskelse, biplyde og fulde melodier uden ekstra ledninger.',
@@ -138,7 +138,7 @@ export const SENSORS: Sensor[] = [
   },
   {
     id: 'mb_touch',
-    name: 'Touch Logo (v2)',
+    name: 'Touch-logo (v2)',
     category: 'microbit_v2',
     shortDesc: 'Kapacitiv berøringsknap på det gyldne micro:bit logo øverst.',
     description: 'Det gyldne micro:bit-logo i toppen af v2 er en kapacitiv touch-sensor. Ligesom en smartphone-skærm registrerer den mikroskopiske ændringer i elektrisk ladning, når din finger rører logoet.',
@@ -150,7 +150,7 @@ export const SENSORS: Sensor[] = [
   },
   {
     id: 'mb_accel',
-    name: 'Accelerometer & Gestus',
+    name: 'Accelerometer og gestus',
     category: 'microbit_v2',
     shortDesc: 'Måler bevægelse, rystelser, hældning, gravitation og frit fald.',
     description: 'Et 3-akset accelerometer (X, Y og Z akse) der måler tyngdekraft og acceleration. Kan detektere gestus som "ryst", "skærm op", "skærm ned", "hæld venstre/højre" og "frit fald".',
@@ -162,7 +162,7 @@ export const SENSORS: Sensor[] = [
   },
   {
     id: 'mb_light',
-    name: 'Indbygget Lyssensor',
+    name: 'Indbygget lyssensor',
     category: 'microbit_v2',
     shortDesc: 'Måler omgivende lysstyrke fra mørke (0) til skarpt lys (255).',
     description: 'Microbitten bruger sine røde lysdioder omvendt: Når dioderne ikke lyser, kan de fungere som små fotodioder, der opfanger lys og genererer en værdi fra 0 til 255.',
@@ -186,7 +186,7 @@ export const SENSORS: Sensor[] = [
   },
   {
     id: 'mb_buttons',
-    name: 'Fysiske Knapper A & B',
+    name: 'Fysiske knapper A og B',
     category: 'microbit_v2',
     shortDesc: 'To taktile trykknapper på forsiden til styring og menuvalg.',
     description: 'De klassiske knapper A og B. Du kan programmere hændelser for når knap A trykkes, knap B trykkes, eller begge knapper (A+B) trykkes samtidigt.',
@@ -198,7 +198,7 @@ export const SENSORS: Sensor[] = [
   },
   {
     id: 'mb_matrix',
-    name: '5x5 LED Matrix Display',
+    name: '5x5 LED-matrix display',
     category: 'microbit_v2',
     shortDesc: '25 røde lysdioder til tal, ikoner, animationer og rullende tekst.',
     description: 'Microbittens ikoniske display med 5x5 røde LED-lys. Kan vise bogstaver, tal, foruddefinerede ikoner (f.eks. hjerte, smiley, kryds) og egne pixel-tegninger.',

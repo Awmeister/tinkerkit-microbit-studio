@@ -4,7 +4,7 @@ export const PROJECTS: Project[] = [
   // --- PROJEKT 1 ---
   {
     id: 'tyverialarm-pir',
-    title: 'Intelligent Tyverialarm med PIR & Sirene',
+    title: 'Intelligent tyverialarm med PIR og sirene',
     tagline: 'Beskyt dit værelse eller værdigenstande med infrarød bevægelsesdetektion og pulserende sirene.',
     category: 'security',
     difficulty: 'begynder',
@@ -13,13 +13,13 @@ export const PROJECTS: Project[] = [
     expansionSensors: [
       {
         sensorId: 'servo',
-        title: 'Automatisk Dørlås',
+        title: 'Automatisk dørlås',
         benefit: 'Lad servomotoren dreje en låsearm på 90 grader, så døren låses i det øjeblik alarmen går!',
         hint: 'Forbind servoen til P2 og brug "set servo pin P2 to 90" når alarmen udløses.'
       },
       {
         sensorId: 'oled',
-        title: 'Sikkerhedsstatus Skærm',
+        title: 'Sikkerhedsstatus på skærm',
         benefit: 'Vis "STATUS: SIKRET" med grøn tekst og skift til "ADVARSEL: INDBRUD DETEKTERET!" med klokkeslæt.',
         hint: 'Forbind OLED til I2C og skriv statusbeskeder under alarmtilstanden.'
       },
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     },
     wiring: [
       {
-        component: 'PIR Bevægelsessensor',
+        component: 'PIR-bevægelsessensor',
         pin: 'Pin 0 (P0) på Octopus:bit',
         wireColor: 'Sort (GND), Rød (VCC), Gul/Hvid (Signal)',
         instructions: 'Sæt PIR-sensorens 3-bens kabel i Pin 0 rækken på dit Octopus:bit board. Vær opmærksom på farverne: Sort til G, Rød til V, Gul til S.'
@@ -62,7 +62,7 @@ export const PROJECTS: Project[] = [
       },
       {
         stepNumber: 2,
-        title: 'Overvågning (Måling)',
+        title: 'Overvågning (måling)',
         description: 'Læs løbende værdien fra digital pin P0. Hvis PIR sensoren ser bevægelse, returnerer den værdien 1.',
         type: 'input'
       },
@@ -151,7 +151,7 @@ export const PROJECTS: Project[] = [
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Klargør Opstarts- og Armeringstid',
+          title: 'Klargør opstarts- og armeringstid',
           category: 'Grundlæggende',
           categoryColor: '#5891f7',
           blockName: 'ved start + pause (ms)',
@@ -165,7 +165,7 @@ export const PROJECTS: Project[] = [
         },
         {
           stepNumber: 2,
-          title: 'Opret Overvågningsløkken',
+          title: 'Opret overvågningsløkken',
           category: 'Grundlæggende',
           categoryColor: '#5891f7',
           blockName: 'for evigt',
@@ -175,7 +175,7 @@ export const PROJECTS: Project[] = [
         },
         {
           stepNumber: 3,
-          title: 'Indsæt Logisk Beslutning (HVIS / ELLERS)',
+          title: 'Indsæt logisk beslutning (hvis / ellers)',
           category: 'Logik',
           categoryColor: '#57a1a5',
           blockName: 'hvis ... så ... ellers',
@@ -187,7 +187,7 @@ export const PROJECTS: Project[] = [
         },
         {
           stepNumber: 4,
-          title: 'Byg Sammenlignings-betingelsen',
+          title: 'Byg sammenligningsbetingelsen',
           category: 'Logik',
           categoryColor: '#57a1a5',
           blockName: '[læs digital værdi fra ben P0] = [ 1 ]',
@@ -201,7 +201,7 @@ export const PROJECTS: Project[] = [
         },
         {
           stepNumber: 5,
-          title: 'Programmer Alarm-reaktionen (Når bevægelse = 1)',
+          title: 'Programmer alarm-reaktionen (når bevægelse = 1)',
           category: 'Musik',
           categoryColor: '#cb4430',
           blockName: 'vis ikon [Nej] + spil tone',
@@ -214,7 +214,7 @@ export const PROJECTS: Project[] = [
         },
         {
           stepNumber: 6,
-          title: 'Programmer Sikker-tilstand (Når der er ro)',
+          title: 'Programmer sikker-tilstand (når der er ro)',
           category: 'Grundlæggende',
           categoryColor: '#5891f7',
           blockName: 'vis LED\'er + pause (ms) [200]',
@@ -254,7 +254,7 @@ basic.forever(function () {
 })`
     },
     pythonCode: {
-      code: `# Intelligent Tyverialarm med PIR & v2 Sirene
+      code: `# Intelligent tyverialarm med PIR og v2 sirene
 from microbit import *
 import music
 
@@ -303,7 +303,7 @@ while True:
   // --- PROJEKT 2 ---
   {
     id: 'beroringsfri-skraldespand',
-    title: 'Den Berøringsfri Skraldespand / Monsterkasse',
+    title: 'Den berøringsfri skraldespand / monsterkasse',
     tagline: 'Byg en hygiejnisk, automatisk skraldespand der åbner låget når din hånd nærmer sig, og lukker igen!',
     category: 'robotics',
     difficulty: 'begynder',
@@ -312,19 +312,19 @@ while True:
     expansionSensors: [
       {
         sensorId: 'mb_mic',
-        title: 'Klap- og Stemmestyring',
+        title: 'Klap- og stemmestyring',
         benefit: 'Gør det muligt også at sige "Åbn!" eller klappe i hænderne for at åbne låget automatisk.',
         hint: 'Brug "on loud sound" blokken til at udløse samme åbningssekvens som ultralydssensoren.'
       },
       {
         sensorId: 'oled',
-        title: 'Affaldstæller på Skærm',
+        title: 'Affaldstæller på skærm',
         benefit: 'Tæl hvor mange stykker affald der er smidt ud i dag og vis en live tæller.',
         hint: 'Opret en variabel "affald" og øg den med 1 hver gang låget åbnes, og vis tallet på OLED.'
       },
       {
         sensorId: 'potentiometer',
-        title: 'Følsomheds-kalibrering',
+        title: 'Følsomhedskalibrering',
         benefit: 'Brug drejeknappen til at justere åbningsafstanden (f.eks. fra 5 cm til 30 cm) uden at omkode.',
         hint: 'Aflæs potentiometeret på P2 og brug værdien som grænseværdi i stedet for det faste tal 15.'
       }
@@ -373,7 +373,7 @@ while True:
       },
       {
         stepNumber: 4,
-        title: 'Servobevægelse & Tidsstyring',
+        title: 'Servobevægelse og tidsstyring',
         description: 'Drej servo til 110 grader (åben), afspil en munter tone, vent 3 sekunder og drej derefter servo tilbage til 0 grader.',
         type: 'output'
       }
@@ -440,7 +440,7 @@ while True:
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Hent Tinkercademy Udvidelsen i MakeCode',
+          title: 'Hent Tinkercademy-udvidelsen i MakeCode',
           category: 'Udvidelser',
           categoryColor: '#717171',
           blockName: 'Tilføj pakken "tinkerkit"',
@@ -450,7 +450,7 @@ while True:
         },
         {
           stepNumber: 2,
-          title: 'Luk Låget ved Opstart',
+          title: 'Luk låget ved opstart',
           category: 'Pins',
           categoryColor: '#9d322a',
           blockName: 'sæt servo på ben [P2] til [0]',
@@ -463,7 +463,7 @@ while True:
         },
         {
           stepNumber: 3,
-          title: 'Opret Variablen "afstand"',
+          title: 'Opret variablen "afstand"',
           category: 'Variabler',
           categoryColor: '#c13541',
           blockName: 'sæt [afstand] til ...',
@@ -473,7 +473,7 @@ while True:
         },
         {
           stepNumber: 4,
-          title: 'Aflæs Ultralydsafstanden fra Sonar:bit',
+          title: 'Aflæs ultralydsafstanden fra Sonar:bit',
           category: 'Sonar',
           categoryColor: '#323e4e',
           blockName: 'sonar:bit distance to obstacle in cm at Pin [P1]',
@@ -486,7 +486,7 @@ while True:
         },
         {
           stepNumber: 5,
-          title: 'Tjek om en Hånd er Nær (Under 15 cm)',
+          title: 'Tjek om en hånd er nær (under 15 cm)',
           category: 'Logik',
           categoryColor: '#57a1a5',
           blockName: 'hvis < [afstand] > 0 og [afstand] < 15 > så',
@@ -498,7 +498,7 @@ while True:
         },
         {
           stepNumber: 6,
-          title: 'Åbn Låget, Vent 3 Sekunder og Luk Igen',
+          title: 'Åbn låget, vent 3 sekunder og luk igen',
           category: 'Pins',
           categoryColor: '#9d322a',
           blockName: 'servo til 110 -> pause 3000 -> servo til 0',
@@ -571,7 +571,7 @@ while True:
   // --- PROJEKT 3 ---
   {
     id: 'smart-plantepasser',
-    title: 'Smart Plantepasser & Drivhus-monitor',
+    title: 'Smart plantepasser og drivhus-monitor',
     tagline: 'Mål jordens fugtighed med to ledende baner, få besked på OLED-displayet og automatisk vanding.',
     category: 'nature',
     difficulty: 'mellem',
@@ -580,13 +580,13 @@ while True:
     expansionSensors: [
       {
         sensorId: 'servo',
-        title: 'Mekanisk Vandventil / Hældearm',
+        title: 'Mekanisk vandventil / hældearm',
         benefit: 'Monter en lille slange eller en vandkop på servoen, så den hælder vand ud når jorden er tør!',
         hint: 'Drej servo til 90 grader i 2 sekunder og vend tilbage til 0 grader.'
       },
       {
         sensorId: 'mb_speaker',
-        title: 'Akustisk Tørst-alarm',
+        title: 'Akustisk tørst-alarm',
         benefit: 'Lad planten "klage" med en lille tørstig piv-tone, hvis jorden når under 20% fugtighed.',
         hint: 'Afspil soundExpression.sad hvis fugtighed er kritisk lav.'
       },
@@ -623,7 +623,7 @@ while True:
     algorithm: [
       {
         stepNumber: 1,
-        title: 'Initialiser OLED skærm',
+        title: 'Initialiser OLED-skærm',
         description: 'Væk OLED skærmen og tegn en velkomstramme.',
         type: 'setup'
       },
@@ -641,7 +641,7 @@ while True:
       },
       {
         stepNumber: 4,
-        title: 'Skærmopdatering & Status',
+        title: 'Skærmopdatering og status',
         description: 'Skriv på OLED: "Fugt: XX %". HVIS under 30%: Skriv "GIV MIG VAND!". ELLERS: Skriv "Alt vel :)".',
         type: 'output'
       }
@@ -697,7 +697,7 @@ while True:
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Hent Tinkercademy/OLED Udvidelsen',
+          title: 'Hent Tinkercademy/OLED-udvidelsen',
           category: 'Udvidelser',
           categoryColor: '#717171',
           blockName: 'Tilføj "tinkerkit"',
@@ -707,7 +707,7 @@ while True:
         },
         {
           stepNumber: 2,
-          title: 'Tænd og Klargør OLED-skærmen',
+          title: 'Tænd og klargør OLED-skærmen',
           category: 'OLED',
           categoryColor: '#64adb8',
           blockName: 'initialize OLED with height [64] width [128]',
@@ -720,7 +720,7 @@ while True:
         },
         {
           stepNumber: 3,
-          title: 'Aflæs det Analoge Signal fra P1',
+          title: 'Aflæs det analoge signal fra P1',
           category: 'Pins',
           categoryColor: '#9d322a',
           blockName: 'læs analog værdi fra ben [P1]',
@@ -732,7 +732,7 @@ while True:
         },
         {
           stepNumber: 4,
-          title: 'Omregn til Procent med Matematik-kortlægning',
+          title: 'Omregn til procent med matematik-kortlægning',
           category: 'Matematik',
           categoryColor: '#852ccb',
           blockName: 'kortlæg [raafugt] fra [0 - 750] til [0 - 100]',
@@ -745,7 +745,7 @@ while True:
         },
         {
           stepNumber: 5,
-          title: 'Udskriv Målingen på OLED Displayet',
+          title: 'Udskriv målingen på OLED-displayet',
           category: 'OLED',
           categoryColor: '#64adb8',
           blockName: 'clear OLED + show string + show number',
@@ -828,7 +828,7 @@ while True:
   // --- PROJEKT 4 ---
   {
     id: 'parkeringsassistent',
-    title: 'Parkeringsassistent med Bak-alarm',
+    title: 'Parkeringsassistent med bak-alarm',
     tagline: 'Ligesom i en moderne elbil: Få advarselsbip der stiger i intensitet, jo tættere du kommer på muren.',
     category: 'robotics',
     difficulty: 'begynder',
@@ -837,19 +837,19 @@ while True:
     expansionSensors: [
       {
         sensorId: 'oled',
-        title: 'Centimeter Digitaldisplay',
+        title: 'Centimeter-digitaldisplay',
         benefit: 'Vis den nøjagtige afstand i centimeter på et lækkert grafisk speedometer.',
         hint: 'Skriv afstanden på OLED og tegn en fremskridtsbjælke der fyldes op.'
       },
       {
         sensorId: 'servo',
-        title: 'Mekanisk Parkeringsbom',
+        title: 'Mekanisk parkeringsbom',
         benefit: 'Lad en bom løfte sig automatisk op, når bilen holder på den helt rigtige plads.',
         hint: 'Sæt servo på P2 og drej til 90 grader når afstand er mellem 5 og 10 cm.'
       },
       {
         sensorId: 'buzzer',
-        title: 'Ekstern Høj Lydgiver',
+        title: 'Ekstern høj lydgiver',
         benefit: 'Monter en ekstern buzzer bagi legetøjsbilen, så lyden kommer fra det rigtige sted.',
         hint: 'Forbind buzzeren til P0 og brug samme tonekald.'
       }
@@ -892,7 +892,7 @@ while True:
       },
       {
         stepNumber: 3,
-        title: 'Dynamisk Bippetakt',
+        title: 'Dynamisk bippetakt',
         description: 'Beregn pause mellem bip baseret på afstand: pause = afstand * 15 millisekunder.',
         type: 'logic'
       },
@@ -948,7 +948,7 @@ while True:
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Mål Afstand med Sonar:bit',
+          title: 'Mål afstand med Sonar:bit',
           category: 'Tinkercademy',
           categoryColor: '#61b73a',
           blockName: 'sæt [afstand] til sonar:bit måling',
@@ -958,7 +958,7 @@ while True:
         },
         {
           stepNumber: 2,
-          title: 'Kritisk Zone: STOP (Under 5 cm)',
+          title: 'Kritisk zone: STOP (under 5 cm)',
           category: 'Logik',
           categoryColor: '#57a1a5',
           blockName: 'hvis < [afstand] <= 5 > så',
@@ -968,7 +968,7 @@ while True:
         },
         {
           stepNumber: 3,
-          title: 'Advarselszone: Hurtigere Bip jo tættere på',
+          title: 'Advarselszone: Hurtigere bip jo tættere på',
           category: 'Logik',
           categoryColor: '#57a1a5',
           blockName: 'ellers hvis < [afstand] <= 35 > så',
@@ -982,7 +982,7 @@ while True:
         },
         {
           stepNumber: 4,
-          title: 'Sikker Zone: Ingen bip',
+          title: 'Sikker zone: Ingen bip',
           category: 'Grundlæggende',
           categoryColor: '#5891f7',
           blockName: 'ellers: vis ikon [Lille Firkant]',
@@ -1044,7 +1044,7 @@ while True:
   // --- PROJEKT 5 ---
   {
     id: 'reaktionsspil-highscore',
-    title: 'Reaktions- & Refleksspil med Highscore',
+    title: 'Reaktions- og refleksspil med highscore',
     tagline: 'Test dine reflekser mod vennerne: Slå på Crash Sensoren det mikrosekund signalet lyder!',
     category: 'games',
     difficulty: 'begynder',
@@ -1053,19 +1053,19 @@ while True:
     expansionSensors: [
       {
         sensorId: 'oled',
-        title: 'Highscore Leaderboard',
+        title: 'Highscore-tavle',
         benefit: 'Vis de 3 hurtigste reaktionstider i millisekunder direkte på OLED-skærmen.',
         hint: 'Gem de bedste tider i variabler og udskriv med OLED.writeStringNewLine.'
       },
       {
         sensorId: 'potentiometer',
-        title: 'Sværhedsgrads-vælger',
+        title: 'Sværhedsgradsvælger',
         benefit: 'Juster den tilfældige ventetid eller snyde-tolerance med drejeknappen.',
         hint: 'Aflæs potentiometer og brug som multiplikator for random interval.'
       },
       {
         sensorId: 'servo',
-        title: 'Præmie-udkaster',
+        title: 'Præmieudkaster',
         benefit: 'Lad servomotoren skubbe et stykke slik ud, hvis reaktionstiden er under 200 millisekunder!',
         hint: 'Drej servo til 90 grader når score < 200.'
       }
@@ -1108,7 +1108,7 @@ while True:
       },
       {
         stepNumber: 4,
-        title: 'Refleks-registrering',
+        title: 'Refleksregistrering',
         description: 'Vent på at Crash Sensor trykkes ned. Sluttid = spilletid. Reaktionstid = sluttid - startTid. Vis resultatet.',
         type: 'input'
       }
@@ -1152,7 +1152,7 @@ while True:
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Start Spillet med Knap A',
+          title: 'Start spillet med knap A',
           category: 'Input',
           categoryColor: '#bc38cd',
           blockName: 'når der trykkes på knap [A]',
@@ -1162,7 +1162,7 @@ while True:
         },
         {
           stepNumber: 2,
-          title: 'Generer Tilfældig Ventetid',
+          title: 'Generer tilfældig ventetid',
           category: 'Matematik',
           categoryColor: '#852ccb',
           blockName: 'pause (ms) [ vælg tilfældigt fra 2000 til 5000 ]',
@@ -1172,7 +1172,7 @@ while True:
         },
         {
           stepNumber: 3,
-          title: 'Giv Startsignal og Start Tiden',
+          title: 'Giv startsignal og start tiden',
           category: 'Grundlæggende',
           categoryColor: '#5891f7',
           blockName: 'vis ikon [Målskive] + sæt startTid til køretid (ms)',
@@ -1182,7 +1182,7 @@ while True:
         },
         {
           stepNumber: 4,
-          title: 'Vent på at Spilleren Hamrer på Crash Sensoren',
+          title: 'Vent på at spilleren trykker på crash-sensoren',
           category: 'Løkker',
           categoryColor: '#56a530',
           blockName: 'mens < læs digital værdi fra ben P1 != 0 >',
@@ -1192,7 +1192,7 @@ while True:
         },
         {
           stepNumber: 5,
-          title: 'Beregn og Vis Reaktionstiden i Millisekunder',
+          title: 'Beregn og vis reaktionstiden i millisekunder',
           category: 'Matematik',
           categoryColor: '#852ccb',
           blockName: 'sæt reaktionstid til [køretid (ms) - startTid]',
@@ -1269,7 +1269,7 @@ while True:
   // --- PROJEKT 6 ---
   {
     id: 'sikkerhedsboks-pinkode',
-    title: 'Hemmelig Sikkerhedsboks med Pinkode',
+    title: 'Hemmelig sikkerhedsboks med pinkode',
     tagline: 'Byg dit eget elektroniske pengeskab med ADKeypad kodelås og servostyret låsemekanisme.',
     category: 'security',
     difficulty: 'avanceret',
@@ -1278,19 +1278,19 @@ while True:
     expansionSensors: [
       {
         sensorId: 'crash',
-        title: 'Låge-kontakt (Sabotage-sikring)',
+        title: 'Lågekontakt (sabotagesikring)',
         benefit: 'Opdag hvis nogen bryder lågen op uden at indtaste koden, og udløs alarmen omgående.',
         hint: 'Sæt crash sensor i kanten af lågen på Pin 1.'
       },
       {
         sensorId: 'mb_accel',
-        title: 'Rystedetektor mod Tyveri',
+        title: 'Rystedetektor mod tyveri',
         benefit: 'Udløs alarm hvis nogen forsøger at løfte eller flytte hele boksen.',
         hint: 'Brug "on shake" hændelsen til at starte sirene.'
       },
       {
         sensorId: 'mb_touch',
-        title: 'Hemmelig Nødnøgle',
+        title: 'Hemmelig nødnøgle',
         benefit: 'Berør logoet i 3 sekunder som hemmelig master-kode for ejeren.',
         hint: 'Tjek om logo er rørt sammen med knap B for nødoplåsning.'
       }
@@ -1327,13 +1327,13 @@ while True:
     algorithm: [
       {
         stepNumber: 1,
-        title: 'Initialisering & Lås',
+        title: 'Initialisering og lås',
         description: 'Drej servo til 0 grader (låst position). Skriv "INDTAST KODE: [ _ _ _ _ ]" på OLED.',
         type: 'setup'
       },
       {
         stepNumber: 2,
-        title: 'Læs Tastatur',
+        title: 'Læs tastatur',
         description: 'Lyt efter knaptryk på ADKeypad. Hver gang en knap trykkes, afspil et lille tastatur-klik og vis en stjerne (*).',
         type: 'input'
       },
@@ -1389,7 +1389,7 @@ while True:
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Initialiser Hardware og Sæt Låsen',
+          title: 'Initialiser hardware og sæt låsen',
           category: 'OLED',
           categoryColor: '#64adb8',
           blockName: 'OLED init + servo til 0',
@@ -1402,7 +1402,7 @@ while True:
         },
         {
           stepNumber: 2,
-          title: 'Registrer Tastetryk fra ADKeypad',
+          title: 'Registrer tastetryk fra ADKeypad',
           category: 'Tinkercademy',
           categoryColor: '#61b73a',
           blockName: 'ADKeypad button [A] is pressed on Pin [P2]',
@@ -1412,7 +1412,7 @@ while True:
         },
         {
           stepNumber: 3,
-          title: 'Lås op ved Korrekt Kode',
+          title: 'Lås op ved korrekt kode',
           category: 'Logik',
           categoryColor: '#57a1a5',
           blockName: 'hvis < indtastet == hemmeligKode > så servo til 90',
@@ -1494,7 +1494,7 @@ pass`,
   // --- PROJEKT 7 ---
   {
     id: 'natlampe-klap-og-lys',
-    title: 'Smart Natlampe med Lyssensor & Klapstyring',
+    title: 'Smart natlampe med lyssensor og klapstyring',
     tagline: 'En sengelampe der automatisk tænder dæmpet i mørke, og kan tændes/slukkes ved blot at klappe i hænderne!',
     category: 'smarthome',
     difficulty: 'begynder',
@@ -1503,19 +1503,19 @@ pass`,
     expansionSensors: [
       {
         sensorId: 'pir',
-        title: 'Bevægelses-tænding under sengen',
+        title: 'Bevægelsestænding under sengen',
         benefit: 'Læg PIR-sensoren ved sengekanten, så lyset tænder blidt når du sætter fødderne på gulvet om natten.',
         hint: 'Tænd displayet når PIR signal er 1 og lysniveau er lavt.'
       },
       {
         sensorId: 'potentiometer',
-        title: 'Lysdæmper (Dimmer)',
+        title: 'Lysdæmper (dimmer)',
         benefit: 'Juster lampens maksimale lysstyrke trinløst med drejeknappen.',
         hint: 'Brug "led.setBrightness(potentiometer / 4)".'
       },
       {
         sensorId: 'oled',
-        title: 'Vækkeur & Nat-display',
+        title: 'Vækkeur og nat-display',
         benefit: 'Vis aktuel tid og om lysautomatikken er slået til eller fra.',
         hint: 'Skriv statusbeskeder på OLED.'
       }
@@ -1602,7 +1602,7 @@ pass`,
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Definer Natlampens Tilstand',
+          title: 'Definer natlampens tilstand',
           category: 'Variabler',
           categoryColor: '#c13541',
           blockName: 'sæt lampeTaendt til FALSK + dæmp lysstyrke',
@@ -1612,7 +1612,7 @@ pass`,
         },
         {
           stepNumber: 2,
-          title: 'Registrer Klap med v2 Mikrofonen',
+          title: 'Registrer klap med v2-mikrofonen',
           category: 'Input',
           categoryColor: '#bc38cd',
           blockName: 'ved høj lyd (on loud sound)',
@@ -1622,7 +1622,7 @@ pass`,
         },
         {
           stepNumber: 3,
-          title: 'Tjek om Rummet er Mørkt',
+          title: 'Tjek om rummet er mørkt',
           category: 'Logik',
           categoryColor: '#57a1a5',
           blockName: 'hvis < [lysniveau] < 70 > så',
@@ -1632,7 +1632,7 @@ pass`,
         },
         {
           stepNumber: 4,
-          title: 'Vend Tilstanden (Toggle Tænd/Sluk)',
+          title: 'Vend tilstanden (tænd/sluk)',
           category: 'Logik',
           categoryColor: '#57a1a5',
           blockName: 'hvis lampeTaendt er sand -> sluk, ellers tænd',
@@ -1710,7 +1710,7 @@ while True:
   // --- PROJEKT 8 ---
   {
     id: 'dj-synthesizer-beatbox',
-    title: 'Digital DJ Synthesizer & Beatbox',
+    title: 'Digital DJ-synthesizer og beatbox',
     tagline: 'Skab elektronisk musik med potentiometeret som pitch/filter og v2 accelerometeret som lyd-effektpad!',
     category: 'audio',
     difficulty: 'mellem',
@@ -1719,19 +1719,19 @@ while True:
     expansionSensors: [
       {
         sensorId: 'keypad',
-        title: '5-toners Klaver-keyboard',
+        title: '5-toners klaver-keyboard',
         benefit: 'Brug ADKeypad til at spille individuelle meloditoner (C, D, E, F, G) oveni bassen.',
         hint: 'Kobl ADKeypad til P2 og spil forskellige frekvenser for hver knap.'
       },
       {
         sensorId: 'oled',
-        title: 'Grafisk Lydbølge Visualizer',
+        title: 'Grafisk lydbølge-visualizer',
         benefit: 'Tegn en live frekvensbølge eller frekvens-tal på skærmen i takt med musikken.',
         hint: 'Tegn linjer på OLED baseret på tonefrekvensen.'
       },
       {
         sensorId: 'servo',
-        title: 'Mekanisk Trommestik',
+        title: 'Mekanisk trommestik',
         benefit: 'Lad servomotoren slå på et bord eller en dåse som en rigtig fysisk robot-trommeslager!',
         hint: 'Skift servo hurtigt mellem 0 og 45 grader i faste takter.'
       }
@@ -1762,7 +1762,7 @@ while True:
     algorithm: [
       {
         stepNumber: 1,
-        title: 'Læs Kontrolværdier',
+        title: 'Læs kontrolværdier',
         description: 'Læs potentiometeret (0-1023) og accelerometerets hældningsvinkel.',
         type: 'input'
       },
@@ -1824,7 +1824,7 @@ while True:
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Læs Potentiometerets Drejeposition',
+          title: 'Læs potentiometerets drejeposition',
           category: 'Pins',
           categoryColor: '#9d322a',
           blockName: 'læs analog værdi fra ben [P1]',
@@ -1834,7 +1834,7 @@ while True:
         },
         {
           stepNumber: 2,
-          title: 'Oversæt Værdien til Musiske Frekvenser',
+          title: 'Oversæt værdien til musiske frekvenser',
           category: 'Matematik',
           categoryColor: '#852ccb',
           blockName: 'kortlæg [pot] fra [0-1023] til [131-988]',
@@ -1847,7 +1847,7 @@ while True:
         },
         {
           stepNumber: 3,
-          title: 'Moduler Tonen med Microbitten i Luften',
+          title: 'Moduler tonen med microbitten i luften',
           category: 'Input',
           categoryColor: '#bc38cd',
           blockName: 'frekvens + (hældning rulning * 2)',
@@ -1857,7 +1857,7 @@ while True:
         },
         {
           stepNumber: 4,
-          title: 'Afspil Tonen Kontinuerligt',
+          title: 'Afspil tonen kontinuerligt',
           category: 'Musik',
           categoryColor: '#cb4430',
           blockName: 'ring tone [frekvens] (Hz)',
@@ -1918,7 +1918,7 @@ while True:
   // --- PROJEKT 9 ---
   {
     id: 'digitalt-vaterpas',
-    title: 'Digitalt Vaterpas & Vinkelmåler',
+    title: 'Digitalt vaterpas og vinkelmåler',
     tagline: 'Byg et ultrapræcist vaterpas med grafisk boble på OLED-skærmen og akustisk centreringsbip.',
     category: 'nature',
     difficulty: 'mellem',
@@ -1927,19 +1927,19 @@ while True:
     expansionSensors: [
       {
         sensorId: 'potentiometer',
-        title: 'Nulstillings- og Kalibreringsknap',
+        title: 'Nulstillings- og kalibreringsknap',
         benefit: 'Juster vaterpassets følsomhed eller nulstil til en skæv overflade (relativ vinkelmåling).',
         hint: 'Brug potentiometer som offset i beregningen.'
       },
       {
         sensorId: 'servo',
-        title: 'Selvnivellerende Platform',
+        title: 'Selvnivellerende platform',
         benefit: 'Lad servomotoren modvirke hældningen, så en monteret platform altid holdes 100% vandret!',
         hint: 'Drej servoen modsat den målte hældningsvinkel.'
       },
       {
         sensorId: 'crash',
-        title: 'Hold / Frys-knap',
+        title: 'Hold- / frys-knap',
         benefit: 'Klik på kontakten for at fastfryse målingen på skærmen, når man måler på svært tilgængelige steder.',
         hint: 'Pause skærmopdatering når crash sensor trykkes.'
       }
@@ -1970,7 +1970,7 @@ while True:
     algorithm: [
       {
         stepNumber: 1,
-        title: 'Aflæs Hældning',
+        title: 'Aflæs hældning',
         description: 'Læs accelerometerets rotation for Pitch (hældning frem/tilbage) og Roll (sidehældning).',
         type: 'input'
       },
@@ -1988,7 +1988,7 @@ while True:
       },
       {
         stepNumber: 4,
-        title: 'Grafisk Visning',
+        title: 'Grafisk visning',
         description: 'Tegn en cirkel (boble) på de beregnede koordinater og vis de nøjagtige grader som tal.',
         type: 'output'
       }
@@ -2032,7 +2032,7 @@ while True:
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Initialiser OLED Skærmen',
+          title: 'Initialiser OLED-skærmen',
           category: 'OLED',
           categoryColor: '#64adb8',
           blockName: 'initialize OLED 64x128',
@@ -2042,7 +2042,7 @@ while True:
         },
         {
           stepNumber: 2,
-          title: 'Aflæs Hældningsvinkler for Rulning og Stigning',
+          title: 'Aflæs hældningsvinkler for rulning og stigning',
           category: 'Input',
           categoryColor: '#bc38cd',
           blockName: 'hældning (grader) [rulning] og [stigning]',
@@ -2055,7 +2055,7 @@ while True:
         },
         {
           stepNumber: 3,
-          title: 'Tjek om Overfladen er 100% Vandret',
+          title: 'Tjek om overfladen er 100% vandret',
           category: 'Matematik',
           categoryColor: '#852ccb',
           blockName: 'hvis < abs(roll) <= 2 og abs(pitch) <= 2 >',
@@ -2124,7 +2124,7 @@ while True:
   // --- PROJEKT 10 ---
   {
     id: 'beroringsfri-haandvask-timer',
-    title: 'Berøringsfri Håndvask-assistent (Sundhedstimer)',
+    title: 'Berøringsfri håndvask-assistent (sundhedstimer)',
     tagline: 'Start en automatisk 20-sekunders håndvask-nedtælling ved blot at føre hænderne hen til vandhanen!',
     category: 'smarthome',
     difficulty: 'begynder',
@@ -2133,19 +2133,19 @@ while True:
     expansionSensors: [
       {
         sensorId: 'servo',
-        title: 'Automatisk Sæbedispenser',
+        title: 'Automatisk sæbedispenser',
         benefit: 'Monter servomotoren til at trykke på pumpen af en sæbeflaske når hænderne ankommer!',
         hint: 'Drej servo 45 grader for at trykke på pumpen og gå retur.'
       },
       {
         sensorId: 'oled',
-        title: 'Grafisk Nedtællingsur',
+        title: 'Grafisk nedtællingsur',
         benefit: 'Vis sekunderne tælle ned fra 20 til 0 med en flot statusbar og hygiejnetips.',
         hint: 'Opdater OLED hvert sekund med resterende tid.'
       },
       {
         sensorId: 'pir',
-        title: 'Badeværelses Velkomst',
+        title: 'Badeværelses-velkomst',
         benefit: 'Opdag når nogen træder ind på badeværelset og sig godmorgen.',
         hint: 'Aktiver velkomstlyd med PIR.'
       }
@@ -2170,19 +2170,19 @@ while True:
     algorithm: [
       {
         stepNumber: 1,
-        title: 'Vente-tilstand',
+        title: 'Ventetilstand',
         description: 'Overvåg afstanden ved hanen. Vis en rolig dråbe på LED.',
         type: 'input'
       },
       {
         stepNumber: 2,
-        title: 'Hænder Registreret',
+        title: 'Hænder registreret',
         description: 'Når afstanden er under 12 cm: Start håndvask-sekvensen.',
         type: 'logic'
       },
       {
         stepNumber: 3,
-        title: '20-sekunders Nedtælling',
+        title: '20-sekunders nedtælling',
         description: 'Kør en løkke over 20 sekunder med visuel animation og periodiske biplyde.',
         type: 'output'
       },
@@ -2232,7 +2232,7 @@ while True:
       detailedSteps: [
         {
           stepNumber: 1,
-          title: 'Overvåg Håndvask-zonen',
+          title: 'Overvåg håndvask-zonen',
           category: 'Sonar',
           categoryColor: '#323e4e',
           blockName: 'hvis < afstand <= 12 og afstand > 0 > så',
@@ -2242,7 +2242,7 @@ while True:
         },
         {
           stepNumber: 2,
-          title: 'Start 20-Sekunders Nedtællingen',
+          title: 'Start 20-sekunders nedtællingen',
           category: 'Løkker',
           categoryColor: '#56a530',
           blockName: 'for [sekund] fra [20] ned til [0]',
@@ -2255,7 +2255,7 @@ while True:
         },
         {
           stepNumber: 3,
-          title: 'Fejr med Succeslyd og Flueben',
+          title: 'Fejr med succeslyd og flueben',
           category: 'Musik',
           categoryColor: '#cb4430',
           blockName: 'vis ikon [Ja] + spil lyd [Happy]',

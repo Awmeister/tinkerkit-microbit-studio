@@ -35,7 +35,7 @@ export const SensorSelector: React.FC<SensorSelectorProps> = ({
   return (
     <section className="py-8 border-b border-slate-800 bg-slate-900/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Sektionsoverskrift & Pædagogisk intro */}
+        {/* Sektionsoverskrift og pædagogisk intro */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
           <div>
             <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-cyan-950 border border-cyan-800/60 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-2">
@@ -114,7 +114,7 @@ export const SensorSelector: React.FC<SensorSelectorProps> = ({
             }`}
           >
             <Cpu className="w-4 h-4" />
-            <span>micro:bit v2 Indbyggede ({v2Count})</span>
+            <span>micro:bit v2 indbyggede ({v2Count})</span>
           </button>
         </div>
 
@@ -134,7 +134,7 @@ export const SensorSelector: React.FC<SensorSelectorProps> = ({
                 }`}
               >
                 <div className="flex items-start justify-between gap-2">
-                  {/* Ikon & Navn */}
+                  {/* Ikon og navn */}
                   <div className="flex items-center space-x-2.5">
                     <div
                       className={`w-9 h-9 rounded-lg flex items-center justify-center transition ${

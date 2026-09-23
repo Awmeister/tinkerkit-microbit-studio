@@ -1,36 +1,36 @@
-# micro:bit v2 & ElecFreaks Tinker Kit Studio 🚀
+# micro:bit v2 og ElecFreaks Tinker Kit Studio 🚀
 
-En moderne, interaktiv lærings- og kodeplatform udviklet til unge (16-25 år) i faget **Teknologiforståelse**. Platformen kombinerer hardware fra **ElecFreaks Tinker Kit** med de integrerede funktioner i **BBC micro:bit v2**.
+En moderne, interaktiv lærings- og kodeplatform udviklet til faget **Teknologiforståelse**. Platformen kombinerer hardware fra **ElecFreaks Tinker Kit** med de integrerede funktioner i **BBC micro:bit v2**.
 
-🌐 **Live Hjemmeside:** [https://awmeister.github.io/tinkerkit-microbit-studio/](https://awmeister.github.io/tinkerkit-microbit-studio/)
+🌐 **Live hjemmeside:** [https://awmeister.github.io/tinkerkit-microbit-studio/](https://awmeister.github.io/tinkerkit-microbit-studio/)
 
 ---
 
 ## 🌟 Nøglefunktioner
 
-1. **Interaktiv Sensorvælger (Hardware Picker)**:
-   - Vælg hvilke moduler du har til rådighed (OLED, PIR, Servo, Sonar, Fugtsensor, Crash sensor, ADKeypad, Potentiometer, Buzzer).
-   - Inkluderer micro:bit v2's interne sensorer (mikrofon, højttaler, touch logo, accelerometer, lyssensor, knapper, 5x5 LED matrix).
+1. **Interaktiv sensorvælger**:
+   - Vælg hvilke moduler du har til rådighed (OLED, PIR, servo, sonar, fugtsensor, crash-sensor, ADKeypad, potentiometer, buzzer).
+   - Inkluderer micro:bit v2's interne sensorer (mikrofon, højttaler, touch-logo, accelerometer, lyssensor, knapper, 5x5 LED-matrix display).
 
-2. **Intelligent Projekt-anbefaler**:
+2. **Intelligent projekt-anbefaler**:
    - Viser øjeblikkeligt hvilke projekter der er **"Klar til at bygge"** ud fra dine valg.
    - Fremhæver projekter der **"Mangler 1 sensor"** med ét-klik tilføjelse.
    - Forslår spændende **"Byg videre"-udvidelser** til hvert projekt.
 
-3. **Pædagogisk Lektionsvisning**:
-   - **Mission & Koncept**: Virkelighedsnær problemstilling, teknologisk løsning og læringsmål.
-   - **Kredsløb & Ledninger**: Tydelig farvekodet ledningsguide til Octopus:bit (GND = Sort/Brun, VCC = Rød, Signal = Gul).
-   - **Algoritme & Flow**: Trin-for-trin gennemgang af logikken før kode.
-   - **Dobbelt Kodevisning**: Skift mellem **Microsoft MakeCode visuelle blokke** (standard) og **MicroPython** med linje-for-linje forklaringer.
+3. **Pædagogisk lektionsvisning**:
+   - **Mission og koncept**: Virkelighedsnær problemstilling, teknologisk løsning og læringsmål.
+   - **Kredsløb og ledninger**: Tydelig farvekodet ledningsguide til Octopus:bit (GND = sort/brun, VCC = rød, Signal = gul).
+   - **Algoritme og flow**: Trin-for-trin gennemgang af logikken før kode.
+   - **Dobbelt kodevisning**: Skift mellem **Microsoft MakeCode visuelle blokke** (standard med autentiske MakeCode-kategorifarver) og **MicroPython** med linje-for-linje forklaringer.
 
-4. **3 Måder at Overføre Kode på**:
-   - ⚡ **1-Klik WebUSB**: Direkte browseroverførsel til micro:bit v2 i Chrome eller Edge.
+4. **3 måder at overføre kode på**:
+   - ⚡ **1-klik WebUSB**: Direkte browseroverførsel til micro:bit v2 i Chrome eller Edge.
    - 📥 **Download .hex**: Hent .hex-filen direkte og træk den over på `MICROBIT`-drevet.
    - 🌐 **Åbn i MakeCode**: Kopiér koden automatisk og åbn Microsoft MakeCode editoren med ét klik.
 
 ---
 
-## 🛠️ Lokal Udvikling & Test
+## 🛠️ Lokal udvikling og test
 
 Projektet er bygget med **React 19**, **Vite**, **TypeScript** og **Tailwind CSS**.
 
@@ -58,7 +58,7 @@ Projektet er forberedt med en automatisk GitHub Actions workflow (`.github/workf
    ```bash
    git init
    git add .
-   git commit -m "Initial commit: micro:bit v2 & Tinker Kit Studio"
+   git commit -m "Initial commit: micro:bit v2 og Tinker Kit Studio"
    git branch -M main
    git remote add origin https://github.com/<DIT-BRUGERNAVN>/<DIT-REPO-NAVN>.git
    git push -u origin main
@@ -74,20 +74,20 @@ Projektet er forberedt med en automatisk GitHub Actions workflow (`.github/workf
 
 ## 📚 Projekter inkluderet i platformen
 
-1. **Intelligent Tyverialarm med PIR & Sirene** (Sikkerhed)
-2. **Den Berøringsfri Skraldespand / Monsterkasse** (Robotik)
-3. **Smart Plantepasser & Drivhus-monitor** (Klima & Natur)
-4. **Parkeringsassistent med Bak-alarm & Afstandsmåler** (Robotik)
-5. **Reaktions- & Refleksspil med Highscore** (Spil)
-6. **Hemmelig Sikkerhedsboks med Pinkode & ADKeypad** (Sikkerhed)
-7. **Smart Natlampe med Lyssensor & Klapstyring** (Smart Home)
-8. **Digital DJ Synthesizer & Beatbox** (Lyd & Musik)
-9. **Digitalt Vaterpas & Vinkelmåler** (Måleteknik & Værktøj)
-10. **Berøringsfri Håndvask-assistent (20-sekunders timer)** (Sundhed & Smart Home)
+1. **Intelligent tyverialarm med PIR og sirene** (Sikkerhed)
+2. **Den berøringsfri skraldespand / monsterkasse** (Robotik)
+3. **Smart plantepasser og drivhus-monitor** (Klima og natur)
+4. **Parkeringsassistent med bak-alarm og afstandsmåler** (Robotik)
+5. **Reaktions- og refleksspil med highscore** (Spil)
+6. **Hemmelig sikkerhedsboks med pinkode og ADKeypad** (Sikkerhed)
+7. **Smart natlampe med lyssensor og klapstyring** (Smart home)
+8. **Digital DJ-synthesizer og beatbox** (Lyd og musik)
+9. **Digitalt vaterpas og vinkelmåler** (Måleteknik og værktøj)
+10. **Berøringsfri håndvask-assistent (20-sekunders timer)** (Sundhed og smart home)
 
 ---
 
-## 📄 Licens & Retsgrundlag
+## 📄 Licens og retsgrundlag
 Dette projekt er udviklet til fri brug i undervisningssammenhænge i faget Teknologiforståelse.
 Micro:bit er et varemærke tilhørende Micro:bit Educational Foundation.
 Tinker Kit er udviklet af ElecFreaks.

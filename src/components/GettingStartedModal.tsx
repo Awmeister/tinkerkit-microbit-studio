@@ -17,7 +17,7 @@ export const GettingStartedModal: React.FC<GettingStartedModalProps> = ({ onClos
             </div>
             <div>
               <h3 className="text-xl font-bold text-white">
-                Kom Godt i Gang: Hardware & Ledninger
+                Kom godt i gang: Hardware og ledninger
               </h3>
               <p className="text-xs text-slate-400">
                 Lynhurtig guide til BBC micro:bit v2 og ElecFreaks Tinker Kit
@@ -38,7 +38,7 @@ export const GettingStartedModal: React.FC<GettingStartedModalProps> = ({ onClos
           <div className="p-4 rounded-xl bg-slate-800/40 border border-slate-700/60">
             <h4 className="font-bold text-white text-sm flex items-center space-x-2 mb-1.5">
               <Layers className="w-4 h-4 text-cyan-400" />
-              <span>1. Hvad er Octopus:bit Breakout Boardet?</span>
+              <span>1. Hvad er Octopus:bit breakout-boardet?</span>
             </h4>
             <p>
               Octopus:bit er det blå udvidelseskort, der følger med Tinker Kittet. Microbitten stikkes direkte ned i det store stik med skærmen vendt fremad. Kortet forvandler microbittens små stikben til brugervenlige 3-bens porte, som passer perfekt til ledningerne i kittet!
@@ -49,7 +49,7 @@ export const GettingStartedModal: React.FC<GettingStartedModalProps> = ({ onClos
           <div className="p-4 rounded-xl bg-blue-950/30 border border-blue-900/60">
             <h4 className="font-bold text-white text-sm flex items-center space-x-2 mb-2">
               <Zap className="w-4 h-4 text-yellow-400" />
-              <span>2. Den Gyldne Regel: G-V-S Farvekoden</span>
+              <span>2. Den gyldne regel: G-V-S farvekoden</span>
             </h4>
             <p className="mb-2 text-blue-200">
               Hvert stik på Octopus:bit har 3 farvede ben i en række. Sørg altid for at vende ledningen rigtigt:

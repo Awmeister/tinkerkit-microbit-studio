@@ -39,7 +39,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       }`}
     >
       <div className="p-5 sm:p-6">
-        {/* Top bar: Status & Tid */}
+        {/* Top bar: Status og tid */}
         <div className="flex items-center justify-between gap-2 mb-3">
           {/* Status Badge */}
           {isReady ? (
@@ -58,7 +58,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </span>
           )}
 
-          {/* Sværhedsgrad & Tidsforbrug */}
+          {/* Sværhedsgrad og tidsforbrug */}
           <div className="flex items-center space-x-2 text-xs text-slate-400">
             <span
               className={`px-2 py-0.5 rounded font-medium ${
@@ -82,7 +82,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
 
-        {/* Titel og Tagline */}
+        {/* Titel og tagline */}
         <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition leading-snug">
           {project.title}
         </h3>
@@ -163,7 +163,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               : 'bg-slate-800 hover:bg-slate-700 text-slate-200'
           }`}
         >
-          <span>{isReady ? 'Start Lektion & Kode' : 'Udforsk projekt'}</span>
+          <span>{isReady ? 'Start lektion og kode' : 'Udforsk projekt'}</span>
           <ChevronRight className="w-4 h-4" />
         </button>
       </div>

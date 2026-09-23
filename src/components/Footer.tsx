@@ -12,10 +12,10 @@ export const Footer: React.FC = () => {
             </div>
             <div>
               <p className="font-semibold text-white">
-                micro:bit v2 + ElecFreaks Tinker Kit Læringsplatform
+                micro:bit v2 og ElecFreaks Tinker Kit læringsplatform
               </p>
               <p className="text-[11px] text-slate-500">
-                Pædagogisk undervisningsværktøj udviklet til faget Teknologiforståelse (16-25 år)
+                Pædagogisk undervisningsværktøj udviklet til faget teknologiforståelse
               </p>
             </div>
           </div>
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
               rel="noopener noreferrer"
               className="hover:text-cyan-400 flex items-center space-x-1 transition"
             >
-              <span>MicroPython Editor</span>
+              <span>MicroPython-editor</span>
               <ExternalLink className="w-3 h-3" />
             </a>
             <a
@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-slate-900 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-slate-500 text-[11px]">
           <p>
-            Klar til direkte deployment på GitHub Pages • 100% statisk & browser-afviklet
+            Klar til direkte deployment på GitHub Pages • 100% statisk og browser-afviklet
           </p>
           <p className="flex items-center space-x-1">
             <span>Bygget med nysgerrighed og maker-glæde</span>

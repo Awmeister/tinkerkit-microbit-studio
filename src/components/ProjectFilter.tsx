@@ -31,7 +31,7 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
 }) => {
   return (
     <div className="space-y-4 mb-8">
-      {/* Søgefelt & Status-knapper */}
+      {/* Søgefelt og status-knapper */}
       <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
         {/* Søgefelt */}
         <div className="relative flex-1 max-w-lg">
@@ -85,7 +85,7 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
         </div>
       </div>
 
-      {/* Filter Chips: Kategori & Sværhedsgrad */}
+      {/* Filter-chips: Kategori og sværhedsgrad */}
       <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-850">
         <div className="flex items-center space-x-1 text-xs text-slate-400 mr-2">
           <Filter className="w-3.5 h-3.5" />
@@ -96,10 +96,10 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
           { id: 'all', label: 'Alle emner' },
           { id: 'security', label: '🛡️ Sikkerhed' },
           { id: 'robotics', label: '🤖 Robotik' },
-          { id: 'smarthome', label: '🏠 Smart Home' },
-          { id: 'nature', label: '🌱 Natur & Klima' },
+          { id: 'smarthome', label: '🏠 Smart home' },
+          { id: 'nature', label: '🌱 Natur og klima' },
           { id: 'games', label: '🎮 Spil' },
-          { id: 'audio', label: '🎵 Lyd & Musik' },
+          { id: 'audio', label: '🎵 Lyd og musik' },
         ].map(cat => (
           <button
             key={cat.id}

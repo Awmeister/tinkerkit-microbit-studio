@@ -57,12 +57,12 @@ export const SensorModal: React.FC<SensorModalProps> = ({
           <div className="p-3.5 rounded-xl bg-amber-950/30 border border-amber-900/50">
             <h4 className="font-semibold text-amber-300 text-xs uppercase tracking-wider mb-1 flex items-center space-x-1.5">
               <Lightbulb className="w-4 h-4 text-amber-400" />
-              <span>Pædagogisk & Teknisk Tip</span>
+              <span>Pædagogisk og teknisk tip</span>
             </h4>
             <p className="text-amber-200 text-xs">{sensor.techTip}</p>
           </div>
 
-          {/* Signaltype & Pinout */}
+          {/* Signaltype og port */}
           <div className="grid grid-cols-2 gap-3 text-xs">
             <div className="p-3 rounded-lg bg-slate-950 border border-slate-800">
               <span className="text-slate-500 block mb-0.5">Signaltype:</span>

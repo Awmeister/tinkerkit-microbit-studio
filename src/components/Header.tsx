@@ -16,7 +16,7 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="sticky top-0 z-40 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo & Titel */}
+          {/* Logo og titel */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
               <Cpu className="w-6 h-6" />
@@ -30,13 +30,10 @@ export const Header: React.FC<HeaderProps> = ({
                   Tinker Kit Studio
                 </span>
               </div>
-              <p className="text-xs text-slate-400 hidden sm:block">
-                Interaktiv lærings- og kodeplatform for 16-25 årige
-              </p>
             </div>
           </div>
 
-          {/* Højre sektion med status & knapper */}
+          {/* Højre sektion med status og knapper */}
           <div className="flex items-center space-x-3">
             <div className="hidden md:flex items-center space-x-2 px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-300">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
@@ -51,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({
               title="Kom godt i gang med hardwaren"
             >
               <HelpCircle className="w-4 h-4 text-cyan-400" />
-              <span className="hidden sm:inline">Hardware Guide</span>
+              <span className="hidden sm:inline">Hardware-guide</span>
             </button>
 
             <a
@@ -59,10 +56,10 @@ export const Header: React.FC<HeaderProps> = ({
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-300 text-sm font-medium border border-cyan-500/30 transition"
-              title="Officiel ElecFreaks Dokumentation"
+              title="Officiel ElecFreaks dokumentation"
             >
               <BookOpen className="w-4 h-4" />
-              <span className="hidden sm:inline">ElecFreaks Doc</span>
+              <span className="hidden sm:inline">ElecFreaks dokumentation</span>
               <ExternalLink className="w-3 h-3 opacity-70" />
             </a>
 
