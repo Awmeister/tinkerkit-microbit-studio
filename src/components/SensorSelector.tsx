@@ -83,9 +83,9 @@ export const SensorSelector: React.FC<SensorSelectorProps> = ({
         <div className="flex flex-wrap items-center gap-2 mb-6">
           <button
             onClick={() => setActiveTab('all')}
-            className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-sm font-medium transition ${
+            className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-150 active:scale-[0.97] ${
               activeTab === 'all'
-                ? 'bg-cyan-500 text-slate-950 font-semibold shadow-md shadow-cyan-500/20'
+                ? 'bg-cyan-500 text-cyan-950 font-semibold shadow-md shadow-cyan-500/20'
                 : 'bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700/60'
             }`}
           >
@@ -95,9 +95,9 @@ export const SensorSelector: React.FC<SensorSelectorProps> = ({
 
           <button
             onClick={() => setActiveTab('tinker_kit')}
-            className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-sm font-medium transition ${
+            className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-150 active:scale-[0.97] ${
               activeTab === 'tinker_kit'
-                ? 'bg-cyan-500 text-slate-950 font-semibold shadow-md shadow-cyan-500/20'
+                ? 'bg-cyan-500 text-cyan-950 font-semibold shadow-md shadow-cyan-500/20'
                 : 'bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700/60'
             }`}
           >
@@ -107,9 +107,9 @@ export const SensorSelector: React.FC<SensorSelectorProps> = ({
 
           <button
             onClick={() => setActiveTab('microbit_v2')}
-            className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-sm font-medium transition ${
+            className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-150 active:scale-[0.97] ${
               activeTab === 'microbit_v2'
-                ? 'bg-cyan-500 text-slate-950 font-semibold shadow-md shadow-cyan-500/20'
+                ? 'bg-cyan-500 text-cyan-950 font-semibold shadow-md shadow-cyan-500/20'
                 : 'bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700/60'
             }`}
           >
@@ -127,7 +127,7 @@ export const SensorSelector: React.FC<SensorSelectorProps> = ({
               <div
                 key={sensor.id}
                 onClick={() => onToggleSensor(sensor.id)}
-                className={`group relative rounded-xl p-3.5 cursor-pointer border transition-all duration-200 select-none ${
+                className={`group relative rounded-xl p-3.5 cursor-pointer border transition-all duration-200 select-none active:scale-[0.98] ${
                   isSelected
                     ? 'bg-slate-800/90 border-cyan-500/80 shadow-md shadow-cyan-500/10 ring-1 ring-cyan-500/40'
                     : 'bg-slate-900/60 border-slate-800/80 hover:bg-slate-800/50 hover:border-slate-700'
@@ -137,9 +137,9 @@ export const SensorSelector: React.FC<SensorSelectorProps> = ({
                   {/* Ikon og navn */}
                   <div className="flex items-center space-x-2.5">
                     <div
-                      className={`w-9 h-9 rounded-lg flex items-center justify-center transition ${
+                      className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 ${
                         isSelected
-                          ? `bg-gradient-to-tr ${sensor.color} text-white shadow-sm`
+                          ? `bg-gradient-to-tr ${sensor.color} text-white shadow-sm scale-105`
                           : 'bg-slate-800 text-slate-400 group-hover:text-slate-200'
                       }`}
                     >
@@ -155,15 +155,15 @@ export const SensorSelector: React.FC<SensorSelectorProps> = ({
                     </div>
                   </div>
 
-                  {/* Afkrydsningsboks */}
+                  {/* Afkrydsningsboks med pop-animation */}
                   <div
-                    className={`w-5 h-5 rounded-md flex items-center justify-center border transition shrink-0 ${
+                    className={`w-5 h-5 rounded-md flex items-center justify-center border transition-all duration-150 shrink-0 ${
                       isSelected
-                        ? 'bg-cyan-500 border-cyan-400 text-slate-950'
+                        ? 'bg-cyan-500 border-cyan-400 text-cyan-950 shadow-sm'
                         : 'border-slate-700 bg-slate-800/50 text-transparent'
                     }`}
                   >
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    {isSelected && <Check className="w-3.5 h-3.5 stroke-[3] animate-check-pop" />}
                   </div>
                 </div>
 

@@ -17,8 +17,8 @@ export const SensorModal: React.FC<SensorModalProps> = ({
   isSelected
 }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-      <div className="relative w-full max-w-lg bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden p-6 space-y-5">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fade-in">
+      <div className="relative w-full max-w-lg bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden p-6 space-y-5 animate-modal-pop">
         {/* Header */}
         <div className="flex items-start justify-between">
           <div className="flex items-center space-x-3">
@@ -37,7 +37,7 @@ export const SensorModal: React.FC<SensorModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-150 active:scale-90"
           >
             <X className="w-5 h-5" />
           </button>
@@ -87,10 +87,10 @@ export const SensorModal: React.FC<SensorModalProps> = ({
               onToggleSelect(sensor.id);
               onClose();
             }}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 active:scale-[0.98] ${
               isSelected
                 ? 'bg-rose-950 text-rose-300 border border-rose-800 hover:bg-rose-900'
-                : 'bg-cyan-500 text-slate-950 hover:bg-cyan-400 font-bold'
+                : 'bg-cyan-500 text-cyan-950 hover:bg-cyan-400 font-bold shadow-md shadow-cyan-500/20'
             }`}
           >
             {isSelected ? 'Fjern fra mit udvalg' : '+ Vælg denne sensor'}
@@ -98,7 +98,7 @@ export const SensorModal: React.FC<SensorModalProps> = ({
 
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs sm:text-sm transition"
+            className="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs sm:text-sm transition-all duration-150 active:scale-95"
           >
             Luk
           </button>

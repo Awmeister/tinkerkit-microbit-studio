@@ -49,7 +49,7 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
         <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={() => onStatusFilterChange('all')}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 active:scale-95 ${
               statusFilter === 'all'
                 ? 'bg-slate-700 text-white font-semibold'
                 : 'bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800'
@@ -61,9 +61,9 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
 
           <button
             onClick={() => onStatusFilterChange('ready')}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 active:scale-95 ${
               statusFilter === 'ready'
-                ? 'bg-emerald-500 text-slate-950 font-semibold shadow-md shadow-emerald-500/20'
+                ? 'bg-emerald-500 text-emerald-950 font-semibold shadow-md shadow-emerald-500/20'
                 : 'bg-slate-900 text-emerald-400 hover:bg-slate-800 border border-emerald-900/40'
             }`}
           >
@@ -73,9 +73,9 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
 
           <button
             onClick={() => onStatusFilterChange('missing_one')}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 active:scale-95 ${
               statusFilter === 'missing_one'
-                ? 'bg-amber-500 text-slate-950 font-semibold shadow-md shadow-amber-500/20'
+                ? 'bg-amber-500 text-amber-950 font-semibold shadow-md shadow-amber-500/20'
                 : 'bg-slate-900 text-amber-400 hover:bg-slate-800 border border-amber-900/40'
             }`}
           >
@@ -104,7 +104,7 @@ export const ProjectFilter: React.FC<ProjectFilterProps> = ({
           <button
             key={cat.id}
             onClick={() => onCategoryFilterChange(cat.id as any)}
-            className={`text-xs px-2.5 py-1 rounded-md transition ${
+            className={`text-xs px-2.5 py-1 rounded-md transition-all duration-150 active:scale-95 ${
               categoryFilter === cat.id
                 ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-medium'
                 : 'bg-slate-900/80 text-slate-400 hover:text-slate-200 border border-slate-800'

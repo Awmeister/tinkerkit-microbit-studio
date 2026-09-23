@@ -161,7 +161,7 @@ export const App: React.FC = () => {
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight max-w-4xl mx-auto leading-tight">
-                Lær at bygge og kode med <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">micro:bit v2 og Tinker Kit</span>
+                Lær at bygge og kode med <span className="text-cyan-400">micro:bit v2 og Tinker Kit</span>
               </h1>
 
               <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed">
@@ -171,7 +171,7 @@ export const App: React.FC = () => {
               <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
                 <button
                   onClick={() => setIsGettingStartedOpen(true)}
-                  className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-medium border border-slate-700 flex items-center space-x-2 transition"
+                  className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-medium border border-slate-700 flex items-center space-x-2 transition-all duration-150 active:scale-95"
                 >
                   <HelpCircle className="w-4 h-4 text-cyan-400" />
                   <span>Se hardware-guide for begyndere</span>
@@ -255,7 +255,7 @@ export const App: React.FC = () => {
                     setDifficultyFilter('all');
                     handleSelectAll();
                   }}
-                  className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition"
+                  className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-bold text-xs transition-all duration-150 active:scale-95 shadow-md shadow-cyan-500/20"
                 >
                   Vis alle projekter
                 </button>

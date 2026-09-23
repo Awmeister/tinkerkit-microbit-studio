@@ -44,7 +44,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={onOpenGettingStarted}
-              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium border border-slate-700 transition"
+              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium border border-slate-700 transition-all duration-150 active:scale-95"
               title="Kom godt i gang med hardwaren"
             >
               <HelpCircle className="w-4 h-4 text-cyan-400" />
@@ -55,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({
               href="https://www.elecfreaks.com/learn-en/microbitKit/Tinker_Kit/tinker_kit.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-300 text-sm font-medium border border-cyan-500/30 transition"
+              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-300 text-sm font-medium border border-cyan-500/30 transition-all duration-150 active:scale-95"
               title="Officiel ElecFreaks dokumentation"
             >
               <BookOpen className="w-4 h-4" />
@@ -67,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({
               href="https://github.com/Awmeister/tinkerkit-microbit-studio"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium border border-slate-700 transition"
+              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium border border-slate-700 transition-all duration-150 active:scale-95"
               title="Se kildekoden på GitHub"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">

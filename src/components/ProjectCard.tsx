@@ -30,11 +30,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div
-      className={`rounded-2xl border transition-all duration-300 flex flex-col justify-between overflow-hidden ${
+      className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between overflow-hidden hover:-translate-y-1 ${
         isReady
           ? 'bg-slate-900/90 border-emerald-500/40 hover:border-emerald-400/80 shadow-lg shadow-emerald-950/20 hover:shadow-emerald-500/10'
           : isMissingOne
-          ? 'bg-slate-900/60 border-amber-500/30 hover:border-amber-400/60'
+          ? 'bg-slate-900/60 border-amber-500/30 hover:border-amber-400/60 hover:shadow-md hover:shadow-amber-950/20'
           : 'bg-slate-900/30 border-slate-800 opacity-75 hover:opacity-100 hover:border-slate-700'
       }`}
     >
@@ -105,7 +105,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               return (
                 <span
                   key={sensorId}
-                  className={`inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-lg text-xs font-medium transition ${
+                  className={`inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-lg text-xs font-medium transition active:scale-[0.97] ${
                     isSelected
                       ? 'bg-slate-800 text-slate-200 border border-slate-700'
                       : 'bg-amber-950/40 text-amber-200 border border-amber-800/50 cursor-pointer hover:bg-amber-900/60'
@@ -132,7 +132,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </span>
             <button
               onClick={() => onSelectMissingSensor(missingSensorIds[0])}
-              className="px-2 py-0.5 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition text-[11px]"
+              className="px-2 py-0.5 rounded bg-amber-500 hover:bg-amber-400 text-amber-950 font-bold transition-all duration-150 active:scale-95 text-[11px]"
             >
               Vælg sensor
             </button>
@@ -157,14 +157,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="p-4 bg-slate-950/60 border-t border-slate-800/60 flex items-center justify-between">
         <button
           onClick={() => onOpenProject(project)}
-          className={`w-full py-2 px-4 rounded-xl text-sm font-semibold flex items-center justify-center space-x-2 transition ${
+          className={`w-full py-2 px-4 rounded-xl text-sm font-semibold flex items-center justify-center space-x-2 transition-all duration-150 active:scale-[0.98] group ${
             isReady
-              ? 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-md shadow-cyan-500/20'
+              ? 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/30'
               : 'bg-slate-800 hover:bg-slate-700 text-slate-200'
           }`}
         >
           <span>{isReady ? 'Start lektion og kode' : 'Udforsk projekt'}</span>
-          <ChevronRight className="w-4 h-4" />
+          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
         </button>
       </div>
     </div>
