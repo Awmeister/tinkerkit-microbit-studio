@@ -2,6 +2,8 @@
 
 En moderne, interaktiv lærings- og kodeplatform udviklet til unge (16-25 år) i faget **Teknologiforståelse**. Platformen kombinerer hardware fra **ElecFreaks Tinker Kit** med de integrerede funktioner i **BBC micro:bit v2**.
 
+🌐 **Live Hjemmeside:** [https://awmeister.github.io/tinkerkit-microbit-studio/](https://awmeister.github.io/tinkerkit-microbit-studio/)
+
 ---
 
 ## 🌟 Nøglefunktioner
