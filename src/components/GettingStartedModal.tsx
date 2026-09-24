@@ -8,12 +8,12 @@ interface GettingStartedModalProps {
 export const GettingStartedModal: React.FC<GettingStartedModalProps> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto animate-fade-in">
-      <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden my-auto p-6 space-y-6 animate-modal-pop">
+      <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-700 rounded-2xl shadow-xl overflow-hidden my-auto p-6 space-y-6 animate-modal-pop">
         {/* Header */}
         <div className="flex items-start justify-between border-b border-slate-800 pb-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-md">
-              <Cpu className="w-6 h-6" />
+            <div className="w-9 h-9 rounded-xl bg-cyan-950 border border-cyan-800/80 flex items-center justify-center text-cyan-400">
+              <Cpu className="w-5 h-5" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-white">
@@ -86,7 +86,7 @@ export const GettingStartedModal: React.FC<GettingStartedModalProps> = ({ onClos
         <div className="pt-2 flex justify-end border-t border-slate-800">
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-bold text-sm transition-all duration-150 active:scale-[0.98] shadow-md shadow-cyan-500/20"
+            className="px-5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-semibold text-sm transition-all duration-150 active:scale-[0.99] shadow-sm"
           >
             Forstået, lad os bygge!
           </button>

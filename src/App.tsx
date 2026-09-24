@@ -10,7 +10,7 @@ import { ProjectPage } from './components/ProjectPage';
 import { SensorModal } from './components/SensorModal';
 import { GettingStartedModal } from './components/GettingStartedModal';
 import { Footer } from './components/Footer';
-import { Compass, Rocket, HelpCircle, Layers } from 'lucide-react';
+import { Compass, HelpCircle } from 'lucide-react';
 
 export const App: React.FC = () => {
   // Start med standardudvalg: De fleste populære sensorer valgt
@@ -151,16 +151,9 @@ export const App: React.FC = () => {
       ) : (
         <>
           {/* Hero Banner */}
-          <div className="relative overflow-hidden border-b border-slate-800 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 py-12 sm:py-16">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(6,182,212,0.15),rgba(255,255,255,0))]" />
-            
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-              <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-700/60 text-cyan-300 text-xs font-semibold uppercase tracking-wider shadow-sm">
-                <Rocket className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Teknologiforståelse og fysisk computing</span>
-              </div>
-
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight max-w-4xl mx-auto leading-tight">
+          <div className="border-b border-slate-800 bg-slate-950 py-10 sm:py-14">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight max-w-3xl mx-auto leading-tight">
                 Lær at bygge og kode med <span className="text-cyan-400">micro:bit v2 og Tinker Kit</span>
               </h1>
 
@@ -168,10 +161,10 @@ export const App: React.FC = () => {
                 Vælg de sensorer du vil eksperimentere med, find spændende projekter inden for smart home, robotik og spil, og følg pædagogiske kode-lektioner med MakeCode-blokke eller Python!
               </p>
 
-              <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+              <div className="pt-1 flex flex-wrap items-center justify-center gap-3">
                 <button
                   onClick={() => setIsGettingStartedOpen(true)}
-                  className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-medium border border-slate-700 flex items-center space-x-2 transition-all duration-150 active:scale-95"
+                  className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs sm:text-sm font-medium border border-slate-800 flex items-center space-x-2 transition-all duration-150 active:scale-[0.99] shadow-sm"
                 >
                   <HelpCircle className="w-4 h-4 text-cyan-400" />
                   <span>Se hardware-guide for begyndere</span>
@@ -192,13 +185,9 @@ export const App: React.FC = () => {
           />
 
           {/* TRIN 2: PROJEKTOVERBLIK OG FILTER */}
-          <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="mb-6">
-              <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-950 border border-blue-800/60 text-blue-300 text-xs font-semibold uppercase tracking-wider mb-2">
-                <Layers className="w-3.5 h-3.5 text-blue-400" />
-                <span>Trin 2: Vælg et projekt</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                 Foreslåede projekter til dine sensorer
               </h2>
               <p className="text-xs sm:text-sm text-slate-400 mt-1">
@@ -255,7 +244,7 @@ export const App: React.FC = () => {
                     setDifficultyFilter('all');
                     handleSelectAll();
                   }}
-                  className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-bold text-xs transition-all duration-150 active:scale-95 shadow-md shadow-cyan-500/20"
+                  className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-semibold text-xs transition-all duration-150 active:scale-[0.99] shadow-sm"
                 >
                   Vis alle projekter
                 </button>

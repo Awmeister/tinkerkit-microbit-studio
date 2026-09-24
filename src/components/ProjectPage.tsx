@@ -92,8 +92,8 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
 
   const triggerCelebration = () => {
     confetti({
-      particleCount: 80,
-      spread: 60,
+      particleCount: 28,
+      spread: 45,
       origin: { y: 0.6 }
     });
   };
@@ -104,9 +104,9 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
       <div className="flex items-center justify-between">
         <button
           onClick={onBack}
-          className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-sm font-semibold border border-slate-800 hover:border-slate-700 transition-all duration-150 active:scale-95 shadow-sm group"
+          className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs sm:text-sm font-medium border border-slate-800 hover:border-slate-700 transition-all duration-150 active:scale-[0.99] shadow-sm group"
         >
-          <ArrowLeft className="w-4 h-4 text-cyan-400 group-hover:-translate-x-1 transition-transform duration-150" />
+          <ArrowLeft className="w-4 h-4 text-cyan-400 group-hover:-translate-x-0.5 transition-transform duration-150" />
           <span>Tilbage til projektoversigten</span>
         </button>
 
@@ -116,24 +116,24 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
       </div>
 
       {/* Projekt Hovedkort */}
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl space-y-4">
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-7 shadow-sm space-y-3.5">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs px-3 py-1 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800 font-semibold uppercase tracking-wider">
+          <span className="text-xs px-2.5 py-0.5 rounded-md bg-cyan-950/60 text-cyan-300 border border-cyan-800/50 font-medium uppercase tracking-wider">
             {project.category.toUpperCase()}
           </span>
-          <span className="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-300 font-medium">
+          <span className="text-xs px-2.5 py-0.5 rounded-md bg-slate-800/80 text-slate-300 font-medium border border-slate-700/60">
             Tid: {project.estimatedTime}
           </span>
-          <span className="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-300 font-medium capitalize">
+          <span className="text-xs px-2.5 py-0.5 rounded-md bg-slate-800/80 text-slate-300 font-medium capitalize border border-slate-700/60">
             Niveau: {project.difficulty}
           </span>
         </div>
 
-        <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+        <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
           {project.title}
         </h1>
 
-        <p className="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+        <p className="text-sm text-slate-300 max-w-3xl leading-relaxed">
           {project.tagline}
         </p>
 
@@ -157,7 +157,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
       </div>
 
       {/* Faner for lektionen */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-1.5 flex items-center space-x-1 overflow-x-auto scrollbar-none shadow-md">
+      <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-1.5 flex items-center space-x-1 overflow-x-auto scrollbar-none shadow-sm">
         {[
           { id: 'mission', label: '1. Mission og koncept', icon: Target },
           { id: 'wiring', label: '2. Ledninger og kredsløb', icon: Cpu },
@@ -172,13 +172,13 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center space-x-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-150 active:scale-95 ${
+              className={`flex items-center space-x-2 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-150 active:scale-[0.99] ${
                 isActive
-                  ? 'bg-cyan-500 text-cyan-950 font-bold shadow-md shadow-cyan-500/20'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                  ? 'bg-slate-800 text-cyan-300 border border-slate-700 font-semibold shadow-sm'
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
               }`}
             >
-              <Icon className="w-4 h-4" />
+              <Icon className="w-4 h-4 text-slate-400" />
               <span>{tab.label}</span>
             </button>
           );
@@ -186,7 +186,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
       </div>
 
       {/* Fane Indhold */}
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-slate-200 text-sm leading-relaxed overflow-hidden">
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-7 shadow-sm text-slate-200 text-sm leading-relaxed overflow-hidden">
         {/* TAB 1: MISSION OG KONCEPT */}
         {activeTab === 'mission' && (
           <div key="mission" className="space-y-6 animate-tab-slide">
@@ -229,10 +229,10 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             <div className="flex justify-end pt-4 border-t border-slate-800">
               <button
                 onClick={() => setActiveTab('wiring')}
-                className="group flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-bold transition-all duration-150 active:scale-[0.98] shadow-md shadow-cyan-500/20"
+                className="group flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-semibold transition-all duration-150 active:scale-[0.99] shadow-sm"
               >
                 <span>Gå til trin 2: Kredsløb og ledninger</span>
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-150" />
               </button>
             </div>
           </div>
@@ -287,16 +287,16 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             <div className="flex justify-between pt-4 border-t border-slate-800">
               <button
                 onClick={() => setActiveTab('mission')}
-                className="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all duration-150 active:scale-95"
+                className="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all duration-150 active:scale-[0.99]"
               >
                 Tilbage til mission
               </button>
               <button
                 onClick={() => setActiveTab('algorithm')}
-                className="group flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-bold transition-all duration-150 active:scale-[0.98] shadow-md shadow-cyan-500/20"
+                className="group flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-semibold transition-all duration-150 active:scale-[0.99] shadow-sm"
               >
                 <span>Gå til trin 3: Algoritme og flow</span>
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-150" />
               </button>
             </div>
           </div>
@@ -367,16 +367,16 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             <div className="flex justify-between pt-4 border-t border-slate-800">
               <button
                 onClick={() => setActiveTab('wiring')}
-                className="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all duration-150 active:scale-95"
+                className="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all duration-150 active:scale-[0.99]"
               >
                 Tilbage til kredsløb
               </button>
               <button
                 onClick={() => setActiveTab('code')}
-                className="group flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-bold transition-all duration-150 active:scale-[0.98] shadow-md shadow-cyan-500/20"
+                className="group flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-semibold transition-all duration-150 active:scale-[0.99] shadow-sm"
               >
                 <span>Gå til trin 4: Se koden</span>
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-150" />
               </button>
             </div>
           </div>
@@ -390,20 +390,20 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               <div className="flex items-center space-x-2">
                 <button
                   onClick={() => setCodeLanguage('makecode')}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-150 active:scale-95 ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 active:scale-[0.99] ${
                     codeLanguage === 'makecode'
-                      ? 'bg-cyan-500 text-cyan-950 shadow-md shadow-cyan-500/20'
-                      : 'bg-slate-950 text-slate-400 hover:text-slate-200 border border-slate-800'
+                      ? 'bg-slate-800 text-cyan-300 border border-slate-700 font-semibold shadow-sm'
+                      : 'bg-slate-950/60 text-slate-400 hover:text-slate-200 border border-slate-800'
                   }`}
                 >
                   🧩 MakeCode visuelle blokke (standard)
                 </button>
                 <button
                   onClick={() => setCodeLanguage('python')}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-150 active:scale-95 ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 active:scale-[0.99] ${
                     codeLanguage === 'python'
-                      ? 'bg-cyan-500 text-cyan-950 shadow-md shadow-cyan-500/20'
-                      : 'bg-slate-950 text-slate-400 hover:text-slate-200 border border-slate-800'
+                      ? 'bg-slate-800 text-cyan-300 border border-slate-700 font-semibold shadow-sm'
+                      : 'bg-slate-950/60 text-slate-400 hover:text-slate-200 border border-slate-800'
                   }`}
                 >
                   🐍 MicroPython
@@ -598,10 +598,10 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               </button>
               <button
                 onClick={() => setActiveTab('flash')}
-                className="group flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-bold transition-all duration-150 active:scale-[0.98] shadow-md shadow-cyan-500/20"
+                className="group flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-semibold transition-all duration-150 active:scale-[0.99] shadow-sm"
               >
                 <span>Gå til trin 5: Overfør til micro:bit</span>
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-150" />
               </button>
             </div>
           </div>
@@ -611,7 +611,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
         {activeTab === 'flash' && (
           <div key="flash" className="space-y-6 animate-tab-slide">
             <div className="text-center max-w-xl mx-auto mb-6">
-              <h4 className="text-2xl font-bold text-white">Vælg hvordan du vil overføre koden</h4>
+              <h4 className="text-xl sm:text-2xl font-bold text-white">Vælg hvordan du vil overføre koden</h4>
               <p className="text-xs sm:text-sm text-slate-400 mt-1">
                 Du kan overføre direkte fra browseren med WebUSB, downloade .hex-filen eller åbne i MakeCode.
               </p>
@@ -620,9 +620,9 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             {/* De 3 overførselsmuligheder */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* 1. Direkte WebUSB */}
-              <div className="rounded-2xl border border-cyan-500/40 bg-gradient-to-b from-cyan-950/30 to-slate-950 p-6 flex flex-col justify-between">
+              <div className="rounded-2xl border border-slate-800 bg-slate-950 p-6 flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-cyan-500 text-cyan-950 flex items-center justify-center font-bold mb-3 shadow-md shadow-cyan-500/30">
+                  <div className="w-10 h-10 rounded-xl bg-cyan-500 text-cyan-950 flex items-center justify-center font-bold mb-3 shadow-sm">
                     <Zap className="w-5 h-5" />
                   </div>
                   <h5 className="font-bold text-white text-base mb-1">
@@ -636,9 +636,9 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 <button
                   onClick={handleWebUsbConnect}
                   disabled={webUsbLoading}
-                  className={`mt-6 w-full py-2.5 px-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-bold text-xs flex items-center justify-center space-x-1.5 transition-all duration-150 active:scale-[0.98] disabled:opacity-50 ${webUsbLoading ? 'animate-pulse-glow' : ''}`}
+                  className={`mt-6 w-full py-2.5 px-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-semibold text-xs flex items-center justify-center space-x-1.5 transition-all duration-150 active:scale-[0.99] disabled:opacity-50 shadow-sm ${webUsbLoading ? 'animate-pulse-glow' : ''}`}
                 >
-                  <Radio className={`w-4 h-4 ${webUsbLoading ? 'animate-pulse' : ''}`} />
+                  <Radio className="w-4 h-4" />
                   <span>{webUsbLoading ? 'Forbinder...' : 'Par og overfør nu'}</span>
                 </button>
               </div>
@@ -659,7 +659,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
 
                 <button
                   onClick={handleDownloadHex}
-                  className="mt-6 w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs flex items-center justify-center space-x-1.5 border border-slate-700 transition-all duration-150 active:scale-[0.98]"
+                  className="mt-6 w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs flex items-center justify-center space-x-1.5 border border-slate-700 transition-all duration-150 active:scale-[0.99]"
                 >
                   <Download className="w-4 h-4" />
                   <span>Hent {project.hexFileName}</span>
@@ -682,7 +682,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
 
                 <button
                   onClick={handleOpenMakeCode}
-                  className="mt-6 w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs flex items-center justify-center space-x-1.5 border border-slate-700 transition-all duration-150 active:scale-[0.98]"
+                  className="mt-6 w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs flex items-center justify-center space-x-1.5 border border-slate-700 transition-all duration-150 active:scale-[0.99]"
                 >
                   <ExternalLink className="w-4 h-4" />
                   <span>Åbn MakeCode-editor</span>
@@ -722,16 +722,16 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             <div className="flex justify-between pt-4 border-t border-slate-800">
               <button
                 onClick={() => setActiveTab('code')}
-                className="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all duration-150 active:scale-95"
+                className="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all duration-150 active:scale-[0.99]"
               >
                 Tilbage til kode
               </button>
               <button
                 onClick={() => setActiveTab('expansions')}
-                className="group flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-bold transition-all duration-150 active:scale-[0.98] shadow-md shadow-cyan-500/20"
+                className="group flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-cyan-950 font-semibold transition-all duration-150 active:scale-[0.99] shadow-sm"
               >
                 <span>Gå til trin 6: Byg videre (udvidelser)</span>
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-150" />
               </button>
             </div>
           </div>
@@ -740,7 +740,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
         {/* TAB 6: BYG VIDERE / UDVIDELSER */}
         {activeTab === 'expansions' && (
           <div key="expansions" className="space-y-6 animate-tab-slide">
-            <div className="bg-gradient-to-r from-cyan-950/40 via-purple-950/40 to-slate-950 border border-cyan-800/40 rounded-3xl p-6">
+            <div className="bg-slate-950/60 border border-slate-800 rounded-2xl p-5">
               <div className="flex items-center space-x-2 text-cyan-400 mb-1">
                 <Sparkles className="w-5 h-5" />
                 <h4 className="font-bold text-white text-base">
@@ -758,7 +758,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 return (
                   <div
                     key={idx}
-                    className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800 hover:border-cyan-500/50 transition-all duration-200 hover:-translate-y-0.5 space-y-3"
+                    className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800 hover:border-cyan-500/50 transition-all duration-150 space-y-3"
                   >
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 rounded-xl bg-cyan-950 border border-cyan-800 text-cyan-300 flex items-center justify-center shrink-0">
@@ -792,13 +792,13 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             <div className="flex justify-between pt-4 border-t border-slate-800">
               <button
                 onClick={() => setActiveTab('flash')}
-                className="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all duration-150 active:scale-95"
+                className="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all duration-150 active:scale-[0.99]"
               >
                 Tilbage til overførsel
               </button>
               <button
                 onClick={onBack}
-                className="px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold transition-all duration-150 active:scale-[0.98] shadow-md shadow-emerald-500/20"
+                className="px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-semibold transition-all duration-150 active:scale-[0.99] shadow-sm"
               >
                 Fuldfør lektion
               </button>

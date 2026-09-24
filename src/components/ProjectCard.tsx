@@ -30,12 +30,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div
-      className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between overflow-hidden hover:-translate-y-1 ${
+      className={`rounded-2xl border transition-all duration-150 flex flex-col justify-between overflow-hidden hover:-translate-y-0.5 ${
         isReady
-          ? 'bg-slate-900/90 border-emerald-500/40 hover:border-emerald-400/80 shadow-lg shadow-emerald-950/20 hover:shadow-emerald-500/10'
+          ? 'bg-slate-900/90 border-emerald-500/30 hover:border-emerald-500/50 shadow-sm'
           : isMissingOne
-          ? 'bg-slate-900/60 border-amber-500/30 hover:border-amber-400/60 hover:shadow-md hover:shadow-amber-950/20'
-          : 'bg-slate-900/30 border-slate-800 opacity-75 hover:opacity-100 hover:border-slate-700'
+          ? 'bg-slate-900/60 border-amber-500/20 hover:border-amber-400/40 shadow-sm'
+          : 'bg-slate-900/30 border-slate-800 opacity-70 hover:opacity-100 hover:border-slate-700'
       }`}
     >
       <div className="p-5 sm:p-6">
@@ -43,17 +43,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="flex items-center justify-between gap-2 mb-3">
           {/* Status Badge */}
           {isReady ? (
-            <span className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+            <span className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-semibold">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
               <span>Klar til at bygge</span>
             </span>
           ) : isMissingOne ? (
-            <span className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-amber-950/80 border border-amber-500/40 text-amber-300 text-xs font-semibold">
+            <span className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-amber-950/60 border border-amber-500/30 text-amber-300 text-xs font-semibold">
               <AlertCircle className="w-3.5 h-3.5 text-amber-400" />
               <span>Mangler 1 sensor</span>
             </span>
           ) : (
-            <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 text-xs font-medium border border-slate-700">
+            <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-slate-800/80 text-slate-400 text-xs font-medium border border-slate-700/60">
               <span>Mangler {missingSensorIds.length} sensorer</span>
             </span>
           )}
@@ -157,14 +157,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="p-4 bg-slate-950/60 border-t border-slate-800/60 flex items-center justify-between">
         <button
           onClick={() => onOpenProject(project)}
-          className={`w-full py-2 px-4 rounded-xl text-sm font-semibold flex items-center justify-center space-x-2 transition-all duration-150 active:scale-[0.98] group ${
+          className={`w-full py-2 px-4 rounded-xl text-sm font-semibold flex items-center justify-center space-x-2 transition-all duration-150 active:scale-[0.99] group ${
             isReady
-              ? 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/30'
-              : 'bg-slate-800 hover:bg-slate-700 text-slate-200'
+              ? 'bg-cyan-500 hover:bg-cyan-400 text-cyan-950 shadow-sm'
+              : 'bg-slate-800 hover:bg-slate-750 text-slate-300 border border-slate-700/60'
           }`}
         >
           <span>{isReady ? 'Start lektion og kode' : 'Udforsk projekt'}</span>
-          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
+          <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-150" />
         </button>
       </div>
     </div>
